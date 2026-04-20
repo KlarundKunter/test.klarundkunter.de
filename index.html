@@ -176,6 +176,7 @@ position:relative;
 z-index:2;
 padding:30px;
 max-width:460px;
+width:100%;
 }
 
 .card h3{
@@ -185,20 +186,75 @@ font-size:34px;
 font-weight:400;
 }
 
-.card-meta{
-font-size:14px;
-letter-spacing:1.2px;
-text-transform:uppercase;
-opacity:0.92;
-margin-bottom:12px;
-line-height:1.7;
-}
-
 .card p{
 margin:0;
 font-size:17px;
 line-height:1.6;
 opacity:0.96;
+}
+
+.workshop-summary{
+display:flex;
+flex-wrap:wrap;
+gap:12px;
+margin:18px 0 28px 0;
+}
+
+.summary-pill{
+padding:10px 14px;
+border-radius:999px;
+background:#efe5dc;
+color:#4c413b;
+font-size:14px;
+letter-spacing:.03em;
+}
+
+.workshop-copy{
+margin-bottom:18px;
+}
+
+.workshop-copy p + p{
+margin-top:10px;
+}
+
+.schedule-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+}
+
+.schedule-card{
+background:rgba(255,255,255,0.16);
+border:1px solid rgba(255,255,255,0.32);
+backdrop-filter:blur(4px);
+padding:14px 16px;
+border-radius:18px;
+}
+
+.schedule-label{
+font-size:11px;
+letter-spacing:.16em;
+text-transform:uppercase;
+opacity:.9;
+margin-bottom:8px;
+}
+
+.schedule-date{
+font-family:Georgia,"Times New Roman",serif;
+font-size:23px;
+line-height:1.2;
+margin-bottom:8px;
+}
+
+.schedule-time,
+.schedule-location{
+font-size:14px;
+line-height:1.5;
+opacity:.96;
+}
+
+.schedule-location{
+margin-top:6px;
 }
 
 /* WORKSHOP IMAGES */
@@ -327,6 +383,14 @@ padding:22px;
 font-size:29px;
 }
 
+.schedule-grid{
+grid-template-columns:1fr;
+}
+
+.summary-pill{
+width:100%;
+}
+
 .contact-mail{
 font-size:24px;
 word-break:break-word;
@@ -371,43 +435,108 @@ word-break:break-word;
 <div class="workshops-head">
 <h2>Workshops</h2>
 <p class="workshops-sub">Donnerstags von 10:00 bis 12:00 Uhr im Lemy&apos;s Café, Berlin (U-Rehberge), und freitags mit zwei Terminen in der Ulme 35, Berlin (U-Neu-Westend). 24 € inklusive Materialien, nur 8 Plätze pro Termin. Mit jeder Buchung finanzierst Du einen kostenlosen Workshop für Menschen mit Fluchtgeschichte.</p>
+<div class="workshop-summary">
+<div class="summary-pill">24 &euro; inkl. Materialien</div>
+<div class="summary-pill">Nur 8 Pl&auml;tze pro Termin</div>
+<div class="summary-pill">Jede Buchung finanziert einen kostenlosen Workshop</div>
+</div>
 </div>
 
 <div class="workshops">
 
 <div class="card card1">
 <div class="card-content">
-<div class="card-meta">Donnerstag, 07. Mai<br>10:00–12:00 Uhr<br>📍 Lemy&apos;s Café, Berlin (U-Rehberge)<br><br>Freitag, 08. Mai<br>14:00–16:00 Uhr<br>16:30–18:30 Uhr<br>📍 Ulme 35, Berlin (U-Neu-Westend)</div>
 <h3>Vasen für Dein Interieur</h3>
+<div class="workshop-copy">
 <p>Du gestaltest und kreierst Vasen, Übertöpfe und Gefäße aus verschiedenen Materialien für Dein Zuhause.</p>
 <p>Jedes Stück wird ein Unikat. Du probierst Dich aus und bringst mehr Farbe in Dein Leben – Entspannung inklusive.</p>
+</div>
+<div class="schedule-grid">
+<div class="schedule-card">
+<div class="schedule-label">Donnerstag</div>
+<div class="schedule-date">07. Mai</div>
+<div class="schedule-time">10:00–12:00 Uhr</div>
+<div class="schedule-location">Lemy&apos;s Caf&eacute;, Berlin (U-Rehberge)</div>
+</div>
+<div class="schedule-card">
+<div class="schedule-label">Freitag</div>
+<div class="schedule-date">08. Mai</div>
+<div class="schedule-time">14:00–16:00 Uhr<br>16:30–18:30 Uhr</div>
+<div class="schedule-location">Ulme 35, Berlin (U-Neu-Westend)</div>
+</div>
+</div>
 </div>
 </div>
 
 <div class="card card2">
 <div class="card-content">
-<div class="card-meta">Donnerstag, 14. Mai<br>10:00–12:00 Uhr<br>📍 Lemy&apos;s Café, Berlin (U-Rehberge)<br><br>Freitag, 15. Mai<br>14:00–16:00 Uhr<br>16:30–18:30 Uhr<br>📍 Ulme 35, Berlin (U-Neu-Westend)</div>
 <h3>Blumen für Deine Stimmung</h3>
+<div class="workshop-copy">
 <p>Du erschaffst opulente, farbenfrohe Blumen – wie aus einem Märchen.</p>
 <p>Ob realistisch oder fantasievoll: nutzbar als Strauß, Dekoration oder Lichtobjekt. Am Ende hältst Du Deine eigenen Blüten stolz in den Händen.</p>
+</div>
+<div class="schedule-grid">
+<div class="schedule-card">
+<div class="schedule-label">Donnerstag</div>
+<div class="schedule-date">14. Mai</div>
+<div class="schedule-time">10:00–12:00 Uhr</div>
+<div class="schedule-location">Lemy&apos;s Caf&eacute;, Berlin (U-Rehberge)</div>
+</div>
+<div class="schedule-card">
+<div class="schedule-label">Freitag</div>
+<div class="schedule-date">15. Mai</div>
+<div class="schedule-time">14:00–16:00 Uhr<br>16:30–18:30 Uhr</div>
+<div class="schedule-location">Ulme 35, Berlin (U-Neu-Westend)</div>
+</div>
+</div>
 </div>
 </div>
 
 <div class="card card3">
 <div class="card-content">
-<div class="card-meta">Donnerstag, 21. Mai<br>10:00–12:00 Uhr<br>📍 Lemy&apos;s Café, Berlin (U-Rehberge)<br><br>Freitag, 22. Mai<br>14:00–16:00 Uhr<br>16:30–18:30 Uhr<br>📍 Ulme 35, Berlin (U-Neu-Westend)</div>
 <h3>Origami für Deine Achtsamkeit</h3>
+<div class="workshop-copy">
 <p>Ohne Druck und ganz in Ruhe gestaltest Du präzise gefaltete Origami-Objekte.</p>
 <p>Du nimmst Schachteln und weitere Stücke mit nach Hause – jederzeit reproduzierbar für kleine Auszeiten.</p>
+</div>
+<div class="schedule-grid">
+<div class="schedule-card">
+<div class="schedule-label">Donnerstag</div>
+<div class="schedule-date">21. Mai</div>
+<div class="schedule-time">10:00–12:00 Uhr</div>
+<div class="schedule-location">Lemy&apos;s Caf&eacute;, Berlin (U-Rehberge)</div>
+</div>
+<div class="schedule-card">
+<div class="schedule-label">Freitag</div>
+<div class="schedule-date">22. Mai</div>
+<div class="schedule-time">14:00–16:00 Uhr<br>16:30–18:30 Uhr</div>
+<div class="schedule-location">Ulme 35, Berlin (U-Neu-Westend)</div>
+</div>
+</div>
 </div>
 </div>
 
 <div class="card card4">
 <div class="card-content">
-<div class="card-meta">Donnerstag, 28. Mai<br>10:00–12:00 Uhr<br>📍 Lemy&apos;s Café, Berlin (U-Rehberge)<br><br>Freitag, 29. Mai<br>14:00–16:00 Uhr<br>16:30–18:30 Uhr<br>📍 Ulme 35, Berlin (U-Neu-Westend)</div>
 <h3>Collagen für Deine Phantasie</h3>
+<div class="workshop-copy">
 <p>Du erstellst eine Collage aus abstrakten Motiven.</p>
 <p>Du lernst Methoden, die Deine Collage einzigartig machen und stärkst Dein Vertrauen in Deine eigene Kreativität.</p>
+</div>
+<div class="schedule-grid">
+<div class="schedule-card">
+<div class="schedule-label">Donnerstag</div>
+<div class="schedule-date">28. Mai</div>
+<div class="schedule-time">10:00–12:00 Uhr</div>
+<div class="schedule-location">Lemy&apos;s Caf&eacute;, Berlin (U-Rehberge)</div>
+</div>
+<div class="schedule-card">
+<div class="schedule-label">Freitag</div>
+<div class="schedule-date">29. Mai</div>
+<div class="schedule-time">14:00–16:00 Uhr<br>16:30–18:30 Uhr</div>
+<div class="schedule-location">Ulme 35, Berlin (U-Neu-Westend)</div>
+</div>
+</div>
 </div>
 </div>
 
