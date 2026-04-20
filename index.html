@@ -175,7 +175,7 @@ z-index:1;
 position:relative;
 z-index:2;
 padding:30px;
-max-width:460px;
+max-width:none;
 width:100%;
 background:linear-gradient(180deg, rgba(63,58,55,0.14) 0%, rgba(63,58,55,0.30) 100%);
 border-radius:28px;
@@ -188,9 +188,10 @@ height:100%;
 .card h3{
 margin:0 0 14px 0;
 font-family:Georgia,"Times New Roman",serif;
-font-size:34px;
+font-size:clamp(1.85rem, 2.4vw, 2.2rem);
 font-weight:400;
-max-width:320px;
+max-width:none;
+white-space:nowrap;
 text-shadow:0 2px 12px rgba(0,0,0,0.22);
 }
 
@@ -232,8 +233,8 @@ margin-top:10px;
 
 .schedule-grid{
 display:grid;
-grid-template-columns:1fr 1fr;
-gap:12px;
+grid-template-columns:1fr;
+gap:10px;
 margin-top:auto;
 }
 
@@ -241,7 +242,7 @@ margin-top:auto;
 background:rgba(255,255,255,0.16);
 border:1px solid rgba(255,255,255,0.32);
 backdrop-filter:blur(4px);
-padding:14px 16px;
+padding:16px 18px;
 border-radius:18px;
 }
 
@@ -269,6 +270,28 @@ opacity:.96;
 
 .schedule-location{
 margin-top:6px;
+}
+
+.schedule-actions{
+margin-top:14px;
+}
+
+.mini-button{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:10px 14px;
+border-radius:999px;
+background:#f7eee7;
+color:#3e332d;
+text-decoration:none;
+font-size:13px;
+font-weight:600;
+letter-spacing:.03em;
+}
+
+.mini-button:hover{
+background:#ffffff;
 }
 
 /* WORKSHOP IMAGES */
@@ -405,6 +428,10 @@ grid-template-columns:1fr;
 width:100%;
 }
 
+.card h3{
+white-space:normal;
+}
+
 .contact-mail{
 font-size:24px;
 word-break:break-word;
@@ -470,13 +497,17 @@ word-break:break-word;
 <div class="schedule-label">Donnerstag</div>
 <div class="schedule-date">07. Mai</div>
 <div class="schedule-time">10:00–12:00 Uhr</div>
-<div class="schedule-location">Lemy&apos;s Caf&eacute;, Berlin (U-Rehberge)</div>
+<div class="schedule-location">Lemy&apos;s Caf&eacute;, Berlin<br>(U-Rehberge)</div>
 </div>
 <div class="schedule-card">
 <div class="schedule-label">Freitag</div>
 <div class="schedule-date">08. Mai</div>
 <div class="schedule-time">14:00–16:00 Uhr<br>16:30–18:30 Uhr</div>
-<div class="schedule-location">Ulme 35, Berlin (U-Neu-Westend)</div>
+<div class="schedule-location">Ulme 35, Berlin<br>(U-Neu-Westend)</div>
+</div>
+</div>
+<div class="schedule-actions">
+<a class="mini-button" href="mailto:klarundkunter@gmail.com?subject=Jetzt%20buchen%20%E2%80%93%20Vasen%20f%C3%BCr%20Dein%20Interieur&body=Hallo%2C%0A%0Aich%20m%C3%B6chte%20gern%20einen%20Platz%20f%C3%BCr%20den%20Workshop%20%E2%80%9EVasen%20f%C3%BCr%20Dein%20Interieur%E2%80%9C%20buchen.%0A%0AMein%20Wunschtermin%20ist%3A%20________________%0A%0AViele%20Gr%C3%BC%C3%9Fe">Jetzt buchen</a>
 </div>
 </div>
 </div>
@@ -494,13 +525,17 @@ word-break:break-word;
 <div class="schedule-label">Donnerstag</div>
 <div class="schedule-date">14. Mai</div>
 <div class="schedule-time">10:00–12:00 Uhr</div>
-<div class="schedule-location">Lemy&apos;s Caf&eacute;, Berlin (U-Rehberge)</div>
+<div class="schedule-location">Lemy&apos;s Caf&eacute;, Berlin<br>(U-Rehberge)</div>
 </div>
 <div class="schedule-card">
 <div class="schedule-label">Freitag</div>
 <div class="schedule-date">15. Mai</div>
 <div class="schedule-time">14:00–16:00 Uhr<br>16:30–18:30 Uhr</div>
-<div class="schedule-location">Ulme 35, Berlin (U-Neu-Westend)</div>
+<div class="schedule-location">Ulme 35, Berlin<br>(U-Neu-Westend)</div>
+</div>
+</div>
+<div class="schedule-actions">
+<a class="mini-button" href="mailto:klarundkunter@gmail.com?subject=Jetzt%20buchen%20%E2%80%93%20Blumen%20f%C3%BCr%20Deine%20Stimmung&body=Hallo%2C%0A%0Aich%20m%C3%B6chte%20gern%20einen%20Platz%20f%C3%BCr%20den%20Workshop%20%E2%80%9EBlumen%20f%C3%BCr%20Deine%20Stimmung%E2%80%9C%20buchen.%0A%0AMein%20Wunschtermin%20ist%3A%20________________%0A%0AViele%20Gr%C3%BC%C3%9Fe">Jetzt buchen</a>
 </div>
 </div>
 </div>
@@ -518,13 +553,17 @@ word-break:break-word;
 <div class="schedule-label">Donnerstag</div>
 <div class="schedule-date">21. Mai</div>
 <div class="schedule-time">10:00–12:00 Uhr</div>
-<div class="schedule-location">Lemy&apos;s Caf&eacute;, Berlin (U-Rehberge)</div>
+<div class="schedule-location">Lemy&apos;s Caf&eacute;, Berlin<br>(U-Rehberge)</div>
 </div>
 <div class="schedule-card">
 <div class="schedule-label">Freitag</div>
 <div class="schedule-date">22. Mai</div>
 <div class="schedule-time">14:00–16:00 Uhr<br>16:30–18:30 Uhr</div>
-<div class="schedule-location">Ulme 35, Berlin (U-Neu-Westend)</div>
+<div class="schedule-location">Ulme 35, Berlin<br>(U-Neu-Westend)</div>
+</div>
+</div>
+<div class="schedule-actions">
+<a class="mini-button" href="mailto:klarundkunter@gmail.com?subject=Jetzt%20buchen%20%E2%80%93%20Origami%20f%C3%BCr%20Deine%20Achtsamkeit&body=Hallo%2C%0A%0Aich%20m%C3%B6chte%20gern%20einen%20Platz%20f%C3%BCr%20den%20Workshop%20%E2%80%9EOrigami%20f%C3%BCr%20Deine%20Achtsamkeit%E2%80%9C%20buchen.%0A%0AMein%20Wunschtermin%20ist%3A%20________________%0A%0AViele%20Gr%C3%BC%C3%9Fe">Jetzt buchen</a>
 </div>
 </div>
 </div>
@@ -542,13 +581,17 @@ word-break:break-word;
 <div class="schedule-label">Donnerstag</div>
 <div class="schedule-date">28. Mai</div>
 <div class="schedule-time">10:00–12:00 Uhr</div>
-<div class="schedule-location">Lemy&apos;s Caf&eacute;, Berlin (U-Rehberge)</div>
+<div class="schedule-location">Lemy&apos;s Caf&eacute;, Berlin<br>(U-Rehberge)</div>
 </div>
 <div class="schedule-card">
 <div class="schedule-label">Freitag</div>
 <div class="schedule-date">29. Mai</div>
 <div class="schedule-time">14:00–16:00 Uhr<br>16:30–18:30 Uhr</div>
-<div class="schedule-location">Ulme 35, Berlin (U-Neu-Westend)</div>
+<div class="schedule-location">Ulme 35, Berlin<br>(U-Neu-Westend)</div>
+</div>
+</div>
+<div class="schedule-actions">
+<a class="mini-button" href="mailto:klarundkunter@gmail.com?subject=Jetzt%20buchen%20%E2%80%93%20Collagen%20f%C3%BCr%20Deine%20Phantasie&body=Hallo%2C%0A%0Aich%20m%C3%B6chte%20gern%20einen%20Platz%20f%C3%BCr%20den%20Workshop%20%E2%80%9ECollagen%20f%C3%BCr%20Deine%20Phantasie%E2%80%9C%20buchen.%0A%0AMein%20Wunschtermin%20ist%3A%20________________%0A%0AViele%20Gr%C3%BC%C3%9Fe">Jetzt buchen</a>
 </div>
 </div>
 </div>
