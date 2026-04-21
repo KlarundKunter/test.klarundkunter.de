@@ -689,19 +689,19 @@ section[id]{
 }
 
 .card1{
-  background:url("https://raw.githubusercontent.com/KlarundKunter/KlarundKunter/main/KuK%20Bilder/KK%202.jpg") center/cover no-repeat;
+  background:url("KuK Bilder/KK 2.jpg") center/cover no-repeat;
 }
 
 .card2{
-  background:url("https://raw.githubusercontent.com/KlarundKunter/KlarundKunter/main/KuK%20Bilder/KK%2023.jpg") center/cover no-repeat;
+  background:url("KuK Bilder/KK 23.jpg") center/cover no-repeat;
 }
 
 .card3{
-  background:url("https://raw.githubusercontent.com/KlarundKunter/KlarundKunter/main/KuK%20Bilder/KK%2034.png") center/cover no-repeat;
+  background:url("KuK Bilder/KK 34.png") center/cover no-repeat;
 }
 
 .card4{
-  background:url("https://raw.githubusercontent.com/KlarundKunter/KlarundKunter/main/KuK%20Bilder/KK%2033.png") center/cover no-repeat;
+  background:url("KuK Bilder/KK 33.png") center/cover no-repeat;
 }
 
 .for-whom{
@@ -766,13 +766,17 @@ section[id]{
 }
 
 .format-feature{
-  background:linear-gradient(160deg, #2e2521 0%, #53433c 100%);
+  background-color:#3b2f2a;
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
   color:#fff;
   border-radius:var(--radius-xl);
   padding:36px;
   box-shadow:var(--shadow);
   position:relative;
   overflow:hidden;
+  isolation:isolate;
 }
 
 .format-feature::before{
@@ -784,6 +788,30 @@ section[id]{
   border:1px solid rgba(255,255,255,.08);
   right:-120px;
   top:-110px;
+  z-index:1;
+}
+
+.format-feature::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(180deg, rgba(22,17,15,.34) 0%, rgba(22,17,15,.62) 100%),
+    linear-gradient(160deg, rgba(46,37,33,.90) 0%, rgba(83,67,60,.82) 100%);
+  z-index:0;
+}
+
+.format-feature > *{
+  position:relative;
+  z-index:2;
+}
+
+.format-feature-company{
+  background-image:url("KuK Bilder/KK 9.jpg");
+}
+
+.format-feature-home{
+  background-image:url("KuK Bilder/KK 4.jpg");
 }
 
 .format-feature .eyebrow{
@@ -860,20 +888,8 @@ section[id]{
   gap:18px;
 }
 
-.format-image-card{
-  background:var(--white);
-  border:1px solid var(--line);
-  border-radius:var(--radius-xl);
-  overflow:hidden;
-  box-shadow:var(--shadow);
-  min-height:320px;
-}
-
-.format-image-card img{
-  width:100%;
-  height:100%;
-  min-height:320px;
-  object-fit:cover;
+.one-line-title{
+  max-width:none;
 }
 
 .format-card{
@@ -1112,6 +1128,20 @@ section[id]{
   }
 }
 
+@media (min-width:641px){
+  .one-line-title{
+    white-space:nowrap;
+  }
+
+  .statement .one-line-title{
+    font-size:clamp(1.5rem, 3.5vw, 2.9rem);
+  }
+
+  .section-title.one-line-title{
+    font-size:clamp(1.45rem, 3.4vw, 2.65rem);
+  }
+}
+
 @media (max-width:900px){
   :root{
     --nav-h: auto;
@@ -1289,8 +1319,8 @@ section[id]{
       <a href="#about">Überblick</a>
       <a href="#infos">Infos</a>
       <a href="#workshops">Workshops</a>
-      <a href="#unternehmen">Unternehmen</a>
-      <a href="#bei-dir">Bei Dir</a>
+      <a href="#unternehmen">Für Unternehmen</a>
+      <a href="#bei-dir">Für Dich</a>
       <a href="#fuer-wen">Für wen</a>
       <a href="#about-me">Über mich</a>
       <a href="#kontakt">Anfragen</a>
@@ -1362,7 +1392,7 @@ section[id]{
 
 <section class="section statement">
   <div class="container statement-inner">
-    <h2>Was du aus einem Workshop mitnehmen kannst</h2>
+    <h2 class="one-line-title">Was du aus einem Workshop mitnehmen kannst</h2>
     <p>Ein Gefühl dafür, wie sich ein Nachmittag bei Klar &amp; Kunter anfühlen kann:</p>
 
     <div class="examples">
@@ -1392,7 +1422,7 @@ section[id]{
 <section class="section" id="infos">
   <div class="container">
     <div class="eyebrow">Alle wichtigen Infos</div>
-    <h2 class="section-title">Die wichtigsten Eckdaten auf einen Blick</h2>
+    <h2 class="section-title one-line-title">Die wichtigsten Eckdaten auf einen Blick</h2>
     <p class="section-copy">Je klarer die Infos, desto leichter fällt die Entscheidung. Ergänze hier deine konkreten Angaben.</p>
 
     <div class="info-grid">
@@ -1428,7 +1458,7 @@ section[id]{
     <div class="workshops-head">
       <h2>Workshops</h2>
       <div class="workshops-intro">
-        <p class="workshops-sub">Donnerstags von 10:00 bis 12:00 Uhr im Lemy&apos;s Caf&eacute;, Berlin (U-Rehberge), und freitags mit zwei Terminen in der Ulme 35, Berlin (U-Neu-Westend). 24 &euro; inklusive Materialien, nur 8 Pl&auml;tze pro Termin. Mit jeder Buchung finanzierst Du einen kostenlosen Workshop f&uuml;r Menschen mit Fluchtgeschichte.</p>
+        <p class="workshops-sub">Donnerstags von 10:00 bis 12:00 Uhr im Lemy&apos;s Caf&eacute;, Berlin-Wedding (U-Rehberge), und freitags mit zwei Terminen in der Ulme 35, Berlin-Charlottenburg (U-Neu-Westend). 24 &euro; inklusive Materialien, nur 8 Pl&auml;tze pro Termin. Mit jeder Buchung finanzierst Du einen kostenlosen Workshop f&uuml;r Menschen mit Fluchtgeschichte.</p>
         <div class="workshop-summary">
           <div class="summary-pill">24 &euro; inkl. Materialien</div>
           <div class="summary-pill">Nur 8 Pl&auml;tze pro Termin</div>
@@ -1453,13 +1483,13 @@ section[id]{
               <div class="schedule-label">Donnerstag</div>
               <div class="schedule-date">07. Mai</div>
               <div class="schedule-time">10:00&ndash;12:00 Uhr</div>
-              <div class="schedule-location">Lemy&apos;s Caf&eacute;, Berlin<br>(U-Rehberge)</div>
+              <div class="schedule-location">Lemy&apos;s Caf&eacute;, Berlin-Wedding<br>(U-Rehberge)</div>
             </div>
             <div class="schedule-card">
               <div class="schedule-label">Freitag</div>
               <div class="schedule-date">08. Mai</div>
               <div class="schedule-time">14:00&ndash;16:00 Uhr<br>16:30&ndash;18:30 Uhr</div>
-              <div class="schedule-location">Ulme 35, Berlin<br>(U-Neu-Westend)</div>
+              <div class="schedule-location">Ulme 35, Berlin-Charlottenburg<br>(U-Neu-Westend)</div>
             </div>
           </div>
           <div class="schedule-actions">
@@ -1484,13 +1514,13 @@ section[id]{
               <div class="schedule-label">Donnerstag</div>
               <div class="schedule-date">14. Mai</div>
               <div class="schedule-time">10:00&ndash;12:00 Uhr</div>
-              <div class="schedule-location">Lemy&apos;s Caf&eacute;, Berlin<br>(U-Rehberge)</div>
+              <div class="schedule-location">Lemy&apos;s Caf&eacute;, Berlin-Wedding<br>(U-Rehberge)</div>
             </div>
             <div class="schedule-card">
               <div class="schedule-label">Freitag</div>
               <div class="schedule-date">15. Mai</div>
               <div class="schedule-time">14:00&ndash;16:00 Uhr<br>16:30&ndash;18:30 Uhr</div>
-              <div class="schedule-location">Ulme 35, Berlin<br>(U-Neu-Westend)</div>
+              <div class="schedule-location">Ulme 35, Berlin-Charlottenburg<br>(U-Neu-Westend)</div>
             </div>
           </div>
           <div class="schedule-actions">
@@ -1515,13 +1545,13 @@ section[id]{
               <div class="schedule-label">Donnerstag</div>
               <div class="schedule-date">21. Mai</div>
               <div class="schedule-time">10:00&ndash;12:00 Uhr</div>
-              <div class="schedule-location">Lemy&apos;s Caf&eacute;, Berlin<br>(U-Rehberge)</div>
+              <div class="schedule-location">Lemy&apos;s Caf&eacute;, Berlin-Wedding<br>(U-Rehberge)</div>
             </div>
             <div class="schedule-card">
               <div class="schedule-label">Freitag</div>
               <div class="schedule-date">22. Mai</div>
               <div class="schedule-time">14:00&ndash;16:00 Uhr<br>16:30&ndash;18:30 Uhr</div>
-              <div class="schedule-location">Ulme 35, Berlin<br>(U-Neu-Westend)</div>
+              <div class="schedule-location">Ulme 35, Berlin-Charlottenburg<br>(U-Neu-Westend)</div>
             </div>
           </div>
           <div class="schedule-actions">
@@ -1546,13 +1576,13 @@ section[id]{
               <div class="schedule-label">Donnerstag</div>
               <div class="schedule-date">28. Mai</div>
               <div class="schedule-time">10:00&ndash;12:00 Uhr</div>
-              <div class="schedule-location">Lemy&apos;s Caf&eacute;, Berlin<br>(U-Rehberge)</div>
+              <div class="schedule-location">Lemy&apos;s Caf&eacute;, Berlin-Wedding<br>(U-Rehberge)</div>
             </div>
             <div class="schedule-card">
               <div class="schedule-label">Freitag</div>
               <div class="schedule-date">29. Mai</div>
               <div class="schedule-time">14:00&ndash;16:00 Uhr<br>16:30&ndash;18:30 Uhr</div>
-              <div class="schedule-location">Ulme 35, Berlin<br>(U-Neu-Westend)</div>
+              <div class="schedule-location">Ulme 35, Berlin-Charlottenburg<br>(U-Neu-Westend)</div>
             </div>
           </div>
           <div class="schedule-actions">
@@ -1568,7 +1598,7 @@ section[id]{
 <section class="section format-section" id="unternehmen">
   <div class="container">
     <div class="format-grid">
-      <div class="format-feature">
+      <div class="format-feature format-feature-company">
         <div class="eyebrow">Für Unternehmen</div>
         <h2>Für Unternehmen &ndash; Kreativität als echte Ressource</h2>
         <p>Im Arbeitsalltag wird viel gedacht, organisiert, entschieden &ndash; aber selten gemacht. Genau hier setzt Klar &amp; Kunter an.</p>
@@ -1589,10 +1619,6 @@ section[id]{
       </div>
 
       <div class="format-side">
-        <div class="format-image-card">
-          <img src="KuK Bilder/KK 9.jpg" alt="Kreative Atmosphäre von Klar und Kunter für Unternehmen" />
-        </div>
-
         <div class="format-card">
           <span>01</span>
           <h3>Das Besondere an Klar &amp; Kunter</h3>
@@ -1626,7 +1652,7 @@ section[id]{
 <section class="section format-section alt" id="bei-dir">
   <div class="container">
     <div class="format-grid">
-      <div class="format-feature">
+      <div class="format-feature format-feature-home">
         <div class="eyebrow">Klar &amp; Kunter bei Dir</div>
         <h2>Für Privatpersonen &amp; Gruppen &ndash; Wieder ins Machen kommen</h2>
         <p>Viele Menschen glauben, sie seien nicht kreativ. In Wahrheit haben sie nur verlernt, anzufangen.</p>
@@ -1639,10 +1665,6 @@ section[id]{
       </div>
 
       <div class="format-side">
-        <div class="format-image-card">
-          <img src="KuK Bilder/KK 4.jpg" alt="Klar und Kunter als kreatives Format bei Dir vor Ort" />
-        </div>
-
         <div class="format-card">
           <span>01</span>
           <h3>Für Freundeskreise &amp; private Gruppen</h3>
@@ -1681,7 +1703,7 @@ section[id]{
 <section class="section for-whom" id="fuer-wen">
   <div class="container">
     <div class="eyebrow">Für wen</div>
-    <h2 class="section-title">Für Frauen, die sich nach echter kreativer Zeit sehnen</h2>
+    <h2 class="section-title one-line-title">Für Frauen, die sich nach echter kreativer Zeit sehnen</h2>
     <p class="section-copy">Für Frauen, die lange nichts Kreatives gemacht haben. Für Frauen, die wieder etwas mit den Händen tun möchten. Für Frauen, die keinen Kursdruck suchen, sondern einen schönen, freundlichen Einstieg.</p>
 
     <div class="for-whom-grid">
