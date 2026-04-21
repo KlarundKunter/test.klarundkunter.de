@@ -261,7 +261,7 @@ section[id]{
 }
 
 .quick-nav-inner{
-  width:min(980px, calc(100% - 40px));
+  width:min(1180px, calc(100% - 40px));
   margin:0 auto;
   background:var(--white);
   border:1px solid var(--line);
@@ -269,7 +269,7 @@ section[id]{
   box-shadow:var(--shadow);
   padding:12px;
   display:grid;
-  grid-template-columns:repeat(5, 1fr);
+  grid-template-columns:repeat(7, minmax(0, 1fr));
   gap:8px;
 }
 
@@ -748,6 +748,173 @@ section[id]{
   font-size:.98rem;
 }
 
+.format-section{
+  background:
+    linear-gradient(180deg, rgba(184,143,124,.10) 0%, rgba(184,143,124,0) 100%);
+}
+
+.format-section.alt{
+  background:
+    linear-gradient(180deg, rgba(32,25,22,.03) 0%, rgba(32,25,22,0) 100%);
+}
+
+.format-grid{
+  display:grid;
+  grid-template-columns:1.02fr .98fr;
+  gap:24px;
+  align-items:stretch;
+}
+
+.format-feature{
+  background:linear-gradient(160deg, #2e2521 0%, #53433c 100%);
+  color:#fff;
+  border-radius:var(--radius-xl);
+  padding:36px;
+  box-shadow:var(--shadow);
+  position:relative;
+  overflow:hidden;
+}
+
+.format-feature::before{
+  content:"";
+  position:absolute;
+  width:280px;
+  height:280px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.08);
+  right:-120px;
+  top:-110px;
+}
+
+.format-feature .eyebrow{
+  color:rgba(255,255,255,.62);
+}
+
+.format-feature h2{
+  color:#fff;
+  font-size:clamp(2rem, 4vw, 3.1rem);
+  line-height:1.02;
+  max-width:640px;
+}
+
+.format-feature p{
+  color:rgba(255,255,255,.84);
+  font-size:1rem;
+  max-width:640px;
+}
+
+.format-feature p + p{
+  margin-top:14px;
+}
+
+.format-list{
+  display:grid;
+  gap:10px;
+  margin:22px 0 0;
+  padding:0;
+  list-style:none;
+}
+
+.format-list li{
+  position:relative;
+  padding-left:18px;
+  color:rgba(255,255,255,.88);
+  line-height:1.55;
+}
+
+.format-list li::before{
+  content:"–";
+  position:absolute;
+  left:0;
+  top:0;
+}
+
+.format-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:24px;
+}
+
+.format-actions .button-primary{
+  background:#fff;
+  color:var(--text);
+}
+
+.format-actions .button-primary:hover{
+  background:#f2ebe5;
+}
+
+.format-actions .button-secondary{
+  border-color:rgba(255,255,255,.24);
+  color:#fff;
+}
+
+.format-actions .button-secondary:hover{
+  background:rgba(255,255,255,.08);
+  color:#fff;
+}
+
+.format-side{
+  display:grid;
+  gap:18px;
+}
+
+.format-card{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:var(--radius-lg);
+  padding:24px;
+  box-shadow:var(--shadow);
+}
+
+.format-card span{
+  display:block;
+  font-size:11px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:12px;
+}
+
+.format-card h3{
+  font-size:1.42rem;
+  margin-bottom:10px;
+}
+
+.format-card p{
+  margin:0;
+  color:var(--muted);
+  font-size:.98rem;
+}
+
+.format-card p + p{
+  margin-top:10px;
+}
+
+.format-card-list{
+  display:grid;
+  gap:10px;
+  margin:14px 0 0;
+  padding:0;
+  list-style:none;
+}
+
+.format-card-list li{
+  position:relative;
+  padding-left:18px;
+  color:var(--muted);
+  line-height:1.55;
+}
+
+.format-card-list li::before{
+  content:"–";
+  position:absolute;
+  left:0;
+  top:0;
+  color:var(--accent-dark);
+}
+
 .about-grid{
   display:grid;
   grid-template-columns:.96fr 1.04fr;
@@ -962,6 +1129,7 @@ section[id]{
   .intro-grid,
   .feature-split,
   .workshops-grid,
+  .format-grid,
   .about-grid,
   .contact-grid{
     grid-template-columns:1fr;
@@ -1026,7 +1194,8 @@ section[id]{
   }
 
   .examples,
-  .info-grid{
+  .info-grid,
+  .format-side{
     grid-template-columns:1fr;
   }
 
@@ -1102,8 +1271,10 @@ section[id]{
     <a class="brand" href="#top">Klar &amp; Kunter</a>
     <nav class="nav">
       <a href="#about">Überblick</a>
-      <a href="#workshops">Workshops</a>
       <a href="#infos">Infos</a>
+      <a href="#workshops">Workshops</a>
+      <a href="#unternehmen">Unternehmen</a>
+      <a href="#bei-dir">Bei Dir</a>
       <a href="#fuer-wen">Für wen</a>
       <a href="#about-me">Über mich</a>
       <a href="#kontakt">Anfragen</a>
@@ -1127,8 +1298,10 @@ section[id]{
 <div class="quick-nav">
   <div class="quick-nav-inner">
     <a href="#about">Was ist Klar &amp; Kunter?</a>
-    <a href="#workshops">Welche Workshops gibt es?</a>
     <a href="#infos">Was ist wichtig zu wissen?</a>
+    <a href="#workshops">Welche Workshops gibt es?</a>
+    <a href="#unternehmen">Was ist für Unternehmen möglich?</a>
+    <a href="#bei-dir">Wie kommt Klar &amp; Kunter zu dir?</a>
     <a href="#about-me">Wer begleitet dich?</a>
     <a href="#kontakt">Wie kannst du anfragen?</a>
   </div>
@@ -1370,6 +1543,111 @@ section[id]{
             <a class="mini-button" href="mailto:klarundkunter@gmail.com?subject=Jetzt%20buchen%20%E2%80%93%20Collagen%20f%C3%BCr%20Deine%20Phantasie&body=Hallo%2C%0A%0Aich%20m%C3%B6chte%20gern%20einen%20Platz%20f%C3%BCr%20den%20Workshop%20%E2%80%9ECollagen%20f%C3%BCr%20Deine%20Phantasie%E2%80%9C%20buchen.%0A%0AMein%20Wunschtermin%20ist%3A%20________________%0A%0AViele%20Gr%C3%BC%C3%9Fe">Jetzt buchen</a>
             <a class="mini-button secondary" href="tel:+491749845286">Anrufen</a>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section format-section" id="unternehmen">
+  <div class="container">
+    <div class="format-grid">
+      <div class="format-feature">
+        <div class="eyebrow">Für Unternehmen</div>
+        <h2>Für Unternehmen &ndash; Kreativität als echte Ressource</h2>
+        <p>Im Arbeitsalltag wird viel gedacht, organisiert, entschieden &ndash; aber selten gemacht. Genau hier setzt Klar &amp; Kunter an.</p>
+        <p>Unsere Workshops holen Mitarbeitende bewusst aus dem Kopf zurück ins Handeln. Für eine Stunde entsteht ein Raum, in dem nicht analysiert, sondern gestaltet wird. Nicht bewertet, sondern ausprobiert. Nicht perfektioniert, sondern einfach begonnen.</p>
+        <p>Warum das so wirkungsvoll ist: Wer ins Tun kommt, verändert seinen Zustand. Hände arbeiten &ndash; der Kopf wird stiller. Gedanken sortieren sich &ndash; neue Klarheit entsteht.</p>
+        <ul class="format-list">
+          <li>Achtsamkeit: Fokus auf den Moment statt Dauerablenkung</li>
+          <li>Resilienz: kleine, regelmäßige Unterbrechung von Stressmustern</li>
+          <li>Mentale Regeneration: echte Pause statt nur &bdquo;nicht arbeiten&ldquo;</li>
+          <li>Selbstwirksamkeit: wieder erleben, etwas erschaffen zu können</li>
+          <li>Kreatives Denken: neue Zugänge, die auch im Job wirken</li>
+          <li>Teamverbindung: gemeinsames, entspanntes Tun ohne Leistungsdruck</li>
+        </ul>
+        <div class="format-actions">
+          <a class="button button-primary" href="mailto:klarundkunter@gmail.com?subject=Anfrage%20Klar%20%26%20Kunter%20f%C3%BCr%20Unternehmen&body=Hallo%2C%0A%0Awir%20interessieren%20uns%20f%C3%BCr%20ein%20Klar%20%26%20Kunter-Format%20f%C3%BCr%20unser%20Unternehmen.%0A%0AWir%20denken%20an%3A%20________________%0A%0AUngef%C3%A4hre%20Gruppengr%C3%B6%C3%9Fe%3A%20________________%0A%0AOrt%20oder%20Rahmen%3A%20________________%0A%0AViele%20Gr%C3%BC%C3%9Fe">Unternehmensformat anfragen</a>
+          <a class="button button-secondary" href="#kontakt">Mehr Infos anfordern</a>
+        </div>
+      </div>
+
+      <div class="format-side">
+        <div class="format-card">
+          <span>01</span>
+          <h3>Das Besondere an Klar &amp; Kunter</h3>
+          <p>Unsere Workshops sind kein klassischer Kurs. Sie sind bewusst niedrigschwellig und so gestaltet, dass wirklich jede Person ins Machen kommt &ndash; unabhängig von Erfahrung oder Selbstbild.</p>
+          <p>Es geht nicht um Talent. Es geht darum, wieder anzufangen.</p>
+        </div>
+
+        <div class="format-card">
+          <span>02</span>
+          <h3>Was eine wöchentliche Kreativpause bewirken kann</h3>
+          <ul class="format-card-list">
+            <li>Mehr Ruhe und Präsenz im Moment</li>
+            <li>Spürbare Unterbrechung von Stressmustern</li>
+            <li>Mentale Erholung durch echtes Gestalten</li>
+            <li>Neue Erfahrung von Selbstwirksamkeit</li>
+            <li>Frische kreative Zugänge für den Arbeitsalltag</li>
+            <li>Verbindung im Team ohne Leistungsdruck</li>
+          </ul>
+        </div>
+
+        <div class="format-card">
+          <span>03</span>
+          <h3>Warum sich das lohnt</h3>
+          <p>Eine Stunde pro Woche, die mehr bewirkt als viele Maßnahmen. Weil sie dort ansetzt, wo Veränderung entsteht: im Tun.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section format-section alt" id="bei-dir">
+  <div class="container">
+    <div class="format-grid">
+      <div class="format-feature">
+        <div class="eyebrow">Klar &amp; Kunter bei Dir</div>
+        <h2>Für Privatpersonen &amp; Gruppen &ndash; Wieder ins Machen kommen</h2>
+        <p>Viele Menschen glauben, sie seien nicht kreativ. In Wahrheit haben sie nur verlernt, anzufangen.</p>
+        <p>Mit Klar &amp; Kunter entsteht genau dieser Anfang &ndash; leicht, ungezwungen und ohne Druck. Unsere Workshops bringen Dich zurück ins Handeln. Weg vom Grübeln, rein ins Ausprobieren. Weg vom &bdquo;Ich kann das nicht&ldquo;, hin zu &bdquo;Ich mache einfach mal&ldquo;.</p>
+        <p>Du musst nichts können. Du musst nur anfangen. Klar &amp; Kunter schafft genau diesen Raum.</p>
+        <div class="format-actions">
+          <a class="button button-primary" href="mailto:klarundkunter@gmail.com?subject=Anfrage%20Klar%20%26%20Kunter%20bei%20mir&body=Hallo%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20Klar%20%26%20Kunter%20an%20einem%20eigenen%20Ort.%0A%0AAnlass%3A%20________________%0A%0AUngef%C3%A4hre%20Gruppengr%C3%B6%C3%9Fe%3A%20________________%0A%0AOrt%3A%20________________%0A%0AViele%20Gr%C3%BC%C3%9Fe">Termin bei Dir anfragen</a>
+          <a class="button button-secondary" href="tel:+491749845286">Direkt anrufen</a>
+        </div>
+      </div>
+
+      <div class="format-side">
+        <div class="format-card">
+          <span>01</span>
+          <h3>Für Freundeskreise &amp; private Gruppen</h3>
+          <p>Ob als besonderer Abend, Geburtstag oder einfach Zeit miteinander: Ihr erlebt gemeinsam, wie gut es tut, etwas mit den eigenen Händen zu erschaffen.</p>
+          <ul class="format-card-list">
+            <li>Gemeinsam ins Tun kommen statt nur reden</li>
+            <li>Lachen, ausprobieren, loslassen</li>
+            <li>Etwas Eigenes entstehen sehen</li>
+            <li>Verbindung spüren &ndash; zu anderen und zu sich selbst</li>
+          </ul>
+        </div>
+
+        <div class="format-card">
+          <span>02</span>
+          <h3>Für Dich allein</h3>
+          <p>Manchmal braucht es genau diesen Raum &ndash; nur für Dich. Um wieder bei Dir anzukommen.</p>
+          <ul class="format-card-list">
+            <li>In Deinem Tempo arbeiten</li>
+            <li>Ohne Bewertung, ohne Ablenkung</li>
+            <li>Schritt für Schritt ins Machen finden</li>
+            <li>Erleben, dass Kreativität noch da ist</li>
+          </ul>
+        </div>
+
+        <div class="format-card">
+          <span>03</span>
+          <h3>Warum das so gut tut</h3>
+          <p>Kreatives Arbeiten ist mehr als ein schönes Ergebnis. Es ist eine Form von Achtsamkeit.</p>
+          <p>Du bist im Moment. Deine Hände führen. Dein Kopf darf leiser werden. Und ganz nebenbei entsteht etwas: ein Gefühl von Ruhe, Klarheit und Selbstvertrauen.</p>
         </div>
       </div>
     </div>
