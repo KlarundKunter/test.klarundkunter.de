@@ -137,15 +137,24 @@ margin:0 0 22px 0;
 .workshops-head{
 display:flex;
 justify-content:space-between;
-align-items:flex-end;
+align-items:flex-start;
 gap:30px;
 margin-bottom:34px;
+}
+
+.workshops-intro{
+max-width:640px;
+display:flex;
+flex-direction:column;
+gap:20px;
 }
 
 .workshops-sub{
 max-width:560px;
 font-size:18px;
 color:#6a625d;
+line-height:1.7;
+margin:0;
 }
 
 .workshops{
@@ -161,13 +170,35 @@ display:flex;
 align-items:stretch;
 overflow:hidden;
 color:#ffffff;
+border-radius:32px;
+border:1px solid rgba(255,255,255,0.14);
+box-shadow:0 28px 55px rgba(53,43,38,0.16);
+isolation:isolate;
+background-color:#6d625c;
+transition:transform .25s ease, box-shadow .25s ease;
+}
+
+.card:hover{
+transform:translateY(-4px);
+box-shadow:0 34px 62px rgba(53,43,38,0.22);
 }
 
 .card::before{
 content:"";
 position:absolute;
 inset:0;
-background:linear-gradient(to top, rgba(92,88,84,0.70) 0%, rgba(124,119,114,0.42) 55%, rgba(210,205,200,0.20) 100%);
+background:
+linear-gradient(180deg, rgba(244,234,225,0.08) 0%, rgba(88,79,74,0.08) 36%, rgba(38,32,29,0.70) 100%);
+z-index:1;
+}
+
+.card::after{
+content:"";
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle at top right, rgba(255,255,255,0.34), transparent 34%),
+linear-gradient(180deg, rgba(17,13,12,0.03) 0%, rgba(17,13,12,0.28) 100%);
 z-index:1;
 }
 
@@ -177,21 +208,44 @@ z-index:2;
 padding:30px;
 max-width:none;
 width:100%;
-background:linear-gradient(180deg, rgba(63,58,55,0.14) 0%, rgba(63,58,55,0.30) 100%);
+background:linear-gradient(180deg, rgba(54,46,42,0.16) 0%, rgba(54,46,42,0.38) 100%);
+border:1px solid rgba(255,255,255,0.12);
 border-radius:28px;
+backdrop-filter:blur(2px);
 display:flex;
 flex-direction:column;
 justify-content:flex-start;
 height:100%;
+gap:18px;
+}
+
+.card-header{
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+.card-kicker{
+display:inline-flex;
+align-items:center;
+width:max-content;
+padding:8px 12px;
+border-radius:999px;
+background:rgba(247,238,231,0.18);
+border:1px solid rgba(255,255,255,0.22);
+font-size:11px;
+font-weight:600;
+letter-spacing:.18em;
+text-transform:uppercase;
 }
 
 .card h3{
-margin:0 0 14px 0;
+margin:0;
 font-family:Georgia,"Times New Roman",serif;
 font-size:clamp(1.85rem, 2.4vw, 2.2rem);
 font-weight:400;
 max-width:none;
-white-space:nowrap;
+white-space:normal;
 text-shadow:0 2px 12px rgba(0,0,0,0.22);
 }
 
@@ -206,7 +260,7 @@ opacity:0.96;
 display:flex;
 flex-wrap:wrap;
 gap:12px;
-margin:18px 0 28px 0;
+margin:0;
 }
 
 .summary-pill{
@@ -219,12 +273,12 @@ letter-spacing:.03em;
 }
 
 .workshop-copy{
-margin-bottom:18px;
-padding:18px 20px;
-background:rgba(54,49,46,0.36);
-border:1px solid rgba(255,255,255,0.18);
+padding:20px 22px;
+background:rgba(48,41,38,0.42);
+border:1px solid rgba(255,255,255,0.16);
 border-radius:20px;
-box-shadow:0 10px 24px rgba(0,0,0,0.08);
+box-shadow:0 16px 34px rgba(0,0,0,0.10);
+backdrop-filter:blur(8px);
 }
 
 .workshop-copy p + p{
@@ -233,32 +287,37 @@ margin-top:10px;
 
 .schedule-grid{
 display:grid;
-grid-template-columns:1fr;
-gap:10px;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:12px;
 margin-top:auto;
 }
 
 .schedule-card{
-background:rgba(255,255,255,0.16);
-border:1px solid rgba(255,255,255,0.32);
-backdrop-filter:blur(4px);
-padding:16px 18px;
+display:flex;
+flex-direction:column;
+justify-content:flex-start;
+background:rgba(255,255,255,0.14);
+border:1px solid rgba(255,255,255,0.24);
+backdrop-filter:blur(8px);
+padding:18px 18px 16px 18px;
 border-radius:18px;
+box-shadow:0 14px 28px rgba(27,19,17,0.12);
 }
 
 .schedule-label{
 font-size:11px;
 letter-spacing:.16em;
 text-transform:uppercase;
-opacity:.9;
+opacity:.86;
+font-weight:600;
 margin-bottom:8px;
 }
 
 .schedule-date{
 font-family:Georgia,"Times New Roman",serif;
-font-size:23px;
+font-size:25px;
 line-height:1.2;
-margin-bottom:8px;
+margin-bottom:10px;
 }
 
 .schedule-time,
@@ -268,12 +327,17 @@ line-height:1.5;
 opacity:.96;
 }
 
+.schedule-time{
+font-weight:600;
+}
+
 .schedule-location{
-margin-top:6px;
+margin-top:8px;
+color:rgba(255,255,255,0.9);
 }
 
 .schedule-actions{
-margin-top:14px;
+margin-top:2px;
 display:flex;
 gap:10px;
 flex-wrap:wrap;
@@ -283,7 +347,7 @@ flex-wrap:wrap;
 display:inline-flex;
 align-items:center;
 justify-content:center;
-padding:10px 14px;
+padding:11px 15px;
 border-radius:999px;
 background:#f7eee7;
 color:#3e332d;
@@ -291,10 +355,23 @@ text-decoration:none;
 font-size:13px;
 font-weight:600;
 letter-spacing:.03em;
+border:1px solid transparent;
+transition:background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
 }
 
 .mini-button:hover{
 background:#ffffff;
+transform:translateY(-1px);
+}
+
+.mini-button.secondary{
+background:rgba(255,255,255,0.08);
+color:#ffffff;
+border-color:rgba(255,255,255,0.28);
+}
+
+.mini-button.secondary:hover{
+background:rgba(255,255,255,0.16);
 }
 
 /* WORKSHOP IMAGES */
@@ -359,8 +436,16 @@ color:#4f4844;
 font-size:62px;
 }
 
+.workshops-head{
+flex-direction:column;
+}
+
 .card{
 min-height:360px;
+}
+
+.schedule-grid{
+grid-template-columns:1fr;
 }
 
 }
@@ -423,16 +508,17 @@ padding:22px;
 font-size:29px;
 }
 
+.card-kicker{
+font-size:10px;
+letter-spacing:.14em;
+}
+
 .schedule-grid{
 grid-template-columns:1fr;
 }
 
 .summary-pill{
 width:100%;
-}
-
-.card h3{
-white-space:normal;
 }
 
 .contact-mail{
@@ -478,6 +564,7 @@ word-break:break-word;
 
 <div class="workshops-head">
 <h2>Workshops</h2>
+<div class="workshops-intro">
 <p class="workshops-sub">Donnerstags von 10:00 bis 12:00 Uhr im Lemy&apos;s Café, Berlin (U-Rehberge), und freitags mit zwei Terminen in der Ulme 35, Berlin (U-Neu-Westend). 24 € inklusive Materialien, nur 8 Plätze pro Termin. Mit jeder Buchung finanzierst Du einen kostenlosen Workshop für Menschen mit Fluchtgeschichte.</p>
 <div class="workshop-summary">
 <div class="summary-pill">24 &euro; inkl. Materialien</div>
@@ -485,12 +572,16 @@ word-break:break-word;
 <div class="summary-pill">Jede Buchung finanziert einen kostenlosen Workshop</div>
 </div>
 </div>
+</div>
 
 <div class="workshops">
 
 <div class="card card1">
 <div class="card-content">
+<div class="card-header">
+<span class="card-kicker">Workshop 01</span>
 <h3>Vasen für Dein Interieur</h3>
+</div>
 <div class="workshop-copy">
 <p>Du gestaltest und kreierst Vasen, Übertöpfe und Gefäße aus verschiedenen Materialien für Dein Zuhause.</p>
 <p>Jedes Stück wird ein Unikat. Du probierst Dich aus und bringst mehr Farbe in Dein Leben – Entspannung inklusive.</p>
@@ -511,14 +602,17 @@ word-break:break-word;
 </div>
 <div class="schedule-actions">
 <a class="mini-button" href="mailto:klarundkunter@gmail.com?subject=Jetzt%20buchen%20%E2%80%93%20Vasen%20f%C3%BCr%20Dein%20Interieur&body=Hallo%2C%0A%0Aich%20m%C3%B6chte%20gern%20einen%20Platz%20f%C3%BCr%20den%20Workshop%20%E2%80%9EVasen%20f%C3%BCr%20Dein%20Interieur%E2%80%9C%20buchen.%0A%0AMein%20Wunschtermin%20ist%3A%20________________%0A%0AViele%20Gr%C3%BC%C3%9Fe">Jetzt buchen</a>
-<a class="mini-button" href="tel:+491749845286">Anrufen</a>
+<a class="mini-button secondary" href="tel:+491749845286">Anrufen</a>
 </div>
 </div>
 </div>
 
 <div class="card card2">
 <div class="card-content">
+<div class="card-header">
+<span class="card-kicker">Workshop 02</span>
 <h3>Blumen für Deine Stimmung</h3>
+</div>
 <div class="workshop-copy">
 <p>Du erschaffst opulente, farbenfrohe Blumen – wie aus einem Märchen.</p>
 <p>Ob realistisch oder fantasievoll: nutzbar als Strauß, Dekoration oder Lichtobjekt. Am Ende hältst Du Deine eigenen Blüten stolz in den Händen.</p>
@@ -539,14 +633,17 @@ word-break:break-word;
 </div>
 <div class="schedule-actions">
 <a class="mini-button" href="mailto:klarundkunter@gmail.com?subject=Jetzt%20buchen%20%E2%80%93%20Blumen%20f%C3%BCr%20Deine%20Stimmung&body=Hallo%2C%0A%0Aich%20m%C3%B6chte%20gern%20einen%20Platz%20f%C3%BCr%20den%20Workshop%20%E2%80%9EBlumen%20f%C3%BCr%20Deine%20Stimmung%E2%80%9C%20buchen.%0A%0AMein%20Wunschtermin%20ist%3A%20________________%0A%0AViele%20Gr%C3%BC%C3%9Fe">Jetzt buchen</a>
-<a class="mini-button" href="tel:+491749845286">Anrufen</a>
+<a class="mini-button secondary" href="tel:+491749845286">Anrufen</a>
 </div>
 </div>
 </div>
 
 <div class="card card3">
 <div class="card-content">
+<div class="card-header">
+<span class="card-kicker">Workshop 03</span>
 <h3>Origami für Deine Achtsamkeit</h3>
+</div>
 <div class="workshop-copy">
 <p>Ohne Druck und ganz in Ruhe gestaltest Du präzise gefaltete Origami-Objekte.</p>
 <p>Du nimmst Schachteln und weitere Stücke mit nach Hause – jederzeit reproduzierbar für kleine Auszeiten.</p>
@@ -567,14 +664,17 @@ word-break:break-word;
 </div>
 <div class="schedule-actions">
 <a class="mini-button" href="mailto:klarundkunter@gmail.com?subject=Jetzt%20buchen%20%E2%80%93%20Origami%20f%C3%BCr%20Deine%20Achtsamkeit&body=Hallo%2C%0A%0Aich%20m%C3%B6chte%20gern%20einen%20Platz%20f%C3%BCr%20den%20Workshop%20%E2%80%9EOrigami%20f%C3%BCr%20Deine%20Achtsamkeit%E2%80%9C%20buchen.%0A%0AMein%20Wunschtermin%20ist%3A%20________________%0A%0AViele%20Gr%C3%BC%C3%9Fe">Jetzt buchen</a>
-<a class="mini-button" href="tel:+491749845286">Anrufen</a>
+<a class="mini-button secondary" href="tel:+491749845286">Anrufen</a>
 </div>
 </div>
 </div>
 
 <div class="card card4">
 <div class="card-content">
+<div class="card-header">
+<span class="card-kicker">Workshop 04</span>
 <h3>Collagen für Deine Phantasie</h3>
+</div>
 <div class="workshop-copy">
 <p>Du erstellst eine Collage aus abstrakten Motiven.</p>
 <p>Du lernst Methoden, die Deine Collage einzigartig machen und stärkst Dein Vertrauen in Deine eigene Kreativität.</p>
@@ -595,7 +695,7 @@ word-break:break-word;
 </div>
 <div class="schedule-actions">
 <a class="mini-button" href="mailto:klarundkunter@gmail.com?subject=Jetzt%20buchen%20%E2%80%93%20Collagen%20f%C3%BCr%20Deine%20Phantasie&body=Hallo%2C%0A%0Aich%20m%C3%B6chte%20gern%20einen%20Platz%20f%C3%BCr%20den%20Workshop%20%E2%80%9ECollagen%20f%C3%BCr%20Deine%20Phantasie%E2%80%9C%20buchen.%0A%0AMein%20Wunschtermin%20ist%3A%20________________%0A%0AViele%20Gr%C3%BC%C3%9Fe">Jetzt buchen</a>
-<a class="mini-button" href="tel:+491749845286">Anrufen</a>
+<a class="mini-button secondary" href="tel:+491749845286">Anrufen</a>
 </div>
 </div>
 </div>
