@@ -261,7 +261,7 @@ section[id]{
 }
 
 .quick-nav-inner{
-  width:min(1180px, calc(100% - 40px));
+  width:min(1080px, calc(100% - 40px));
   margin:0 auto;
   background:var(--white);
   border:1px solid var(--line);
@@ -269,7 +269,7 @@ section[id]{
   box-shadow:var(--shadow);
   padding:12px;
   display:grid;
-  grid-template-columns:repeat(7, minmax(0, 1fr));
+  grid-template-columns:repeat(6, minmax(0, 1fr));
   gap:8px;
 }
 
@@ -796,14 +796,23 @@ section[id]{
   position:absolute;
   inset:0;
   background:
-    linear-gradient(180deg, rgba(22,17,15,.34) 0%, rgba(22,17,15,.62) 100%),
-    linear-gradient(160deg, rgba(46,37,33,.90) 0%, rgba(83,67,60,.82) 100%);
+    linear-gradient(180deg, rgba(22,17,15,.18) 0%, rgba(22,17,15,.46) 100%),
+    linear-gradient(160deg, rgba(46,37,33,.58) 0%, rgba(83,67,60,.48) 100%);
   z-index:0;
 }
 
 .format-feature > *{
   position:relative;
   z-index:2;
+}
+
+.format-feature-copy{
+  background:rgba(24,18,17,.20);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:26px;
+  padding:32px;
+  backdrop-filter:blur(3px);
+  box-shadow:0 16px 36px rgba(18,14,13,.14);
 }
 
 .format-feature-company{
@@ -922,6 +931,10 @@ section[id]{
 
 .format-card p + p{
   margin-top:10px;
+}
+
+.format-card-actions{
+  margin-top:16px;
 }
 
 .format-card-list{
@@ -1251,7 +1264,8 @@ section[id]{
   .intro-panel,
   .workshop-content,
   .info-card,
-  .social-card{
+  .social-card,
+  .format-feature-copy{
     padding:22px;
   }
 
@@ -1317,7 +1331,6 @@ section[id]{
     <a class="brand" href="#top">Klar &amp; Kunter</a>
     <nav class="nav">
       <a href="#about">Überblick</a>
-      <a href="#infos">Infos</a>
       <a href="#workshops">Workshops</a>
       <a href="#unternehmen">Für Unternehmen</a>
       <a href="#bei-dir">Für Dich</a>
@@ -1330,8 +1343,8 @@ section[id]{
 
 <section class="hero" id="top">
   <div class="hero-inner">
-    <div class="hero-kicker">Kreative Workshops für Frauen in Berlin</div>
-    <h1>Lade Deine Kreativität in 90 Minuten auf!</h1>
+    <div class="hero-kicker">Stress reduzieren durch Kreativität</div>
+    <h1>Wir reduzieren Deinen Stress und bauen Kreativität auf.</h1>
     <p class="hero-lead">Ohne Leistungsdruck, ohne Vorkenntnisse und mit hochwertigen Materialien: Klar &amp; Kunter ist ein liebevoll gestalteter Raum für Frauen, die sich nach echter kreativer Zeit sehnen.</p>
     <div class="hero-actions">
       <a class="button button-primary" href="#kontakt">Jetzt Platz anfragen</a>
@@ -1344,7 +1357,6 @@ section[id]{
 <div class="quick-nav">
   <div class="quick-nav-inner">
     <a href="#about">Was ist Klar &amp; Kunter?</a>
-    <a href="#infos">Was ist wichtig zu wissen?</a>
     <a href="#workshops">Welche Workshops gibt es?</a>
     <a href="#unternehmen">Was ist für Unternehmen möglich?</a>
     <a href="#bei-dir">Wie kommt Klar &amp; Kunter zu dir?</a>
@@ -1358,7 +1370,7 @@ section[id]{
     <div class="intro-grid">
       <div class="intro-copy">
         <div class="eyebrow">Ein leichter Einstieg in Kreativität</div>
-        <h2>Du musst nicht „kreativ genug“ sein, um hier anzufangen.</h2>
+        <h2>Kreativität steckt in uns allen. Nutze sie für Dich, um Balance zu finden.</h2>
         <p class="section-copy">Klar &amp; Kunter ist für Frauen, die wieder etwas mit den Händen machen möchten. Für Frauen, die Lust auf Farbe, Material und echte kreative Zeit haben – ohne Druck, ohne Bewertung und ohne das Gefühl, etwas leisten zu müssen.</p>
         <p class="section-copy">Hier geht es nicht darum, besonders talentiert zu sein. Sondern darum, wieder in Kontakt mit der eigenen Neugier zu kommen und zu spüren, wie gut es tut, etwas Eigenes entstehen zu lassen.</p>
       </div>
@@ -1381,7 +1393,7 @@ section[id]{
 
       <div class="feature-copy">
         <div class="eyebrow">Was Klar &amp; Kunter besonders macht</div>
-        <h2>Der Weg zurück in die eigene Kreativität darf sanft, schön und leicht beginnen</h2>
+        <h2>Der Weg in die eigene Kreativität darf sanft, schön und leicht beginnen</h2>
         <p>Viele Frauen glauben, sie seien nicht kreativ. Dabei fehlt oft nicht das Talent, sondern nur der richtige Einstieg: ein guter Rahmen, gute Materialien und eine Atmosphäre, in der man sich traut anzufangen.</p>
         <p>Klar &amp; Kunter schafft genau diesen Anfang: nicht verkopft, nicht virtuell – sondern sinnlich, atmosphärisch und mit echter Freude am Tun.</p>
         <p>Es geht nicht um Perfektion. Es geht darum, wieder ins Machen zu kommen.</p>
@@ -1413,41 +1425,7 @@ section[id]{
 
       <div class="example">
         <div class="example-number">04</div>
-        <p>Du gehst nach Hause mit etwas Selbstgeschaffenem, neuer Leichtigkeit und mehr Vertrauen in deine Kreativität.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="infos">
-  <div class="container">
-    <div class="eyebrow">Alle wichtigen Infos</div>
-    <h2 class="section-title one-line-title">Die wichtigsten Eckdaten auf einen Blick</h2>
-    <p class="section-copy">Je klarer die Infos, desto leichter fällt die Entscheidung. Ergänze hier deine konkreten Angaben.</p>
-
-    <div class="info-grid">
-      <div class="info-card">
-        <h3>Ort</h3>
-        <span class="info-label">Berlin</span>
-        <div class="info-value">Berlin-Charlottenburg</div>
-      </div>
-
-      <div class="info-card">
-        <h3>Dauer</h3>
-        <span class="info-label">Pro Workshop</span>
-        <div class="info-value">1,5 bis 3 Stunden</div>
-      </div>
-
-      <div class="info-card">
-        <h3>Preis</h3>
-        <span class="info-label">Inklusive Materialien</span>
-        <div class="info-value">ab 29 €</div>
-      </div>
-
-      <div class="info-card">
-        <h3>Termine</h3>
-        <span class="info-label">Nächste Runde</span>
-        <div class="info-value">Mai 2026</div>
+        <p>Du gehst nach Hause mit etwas Selbstgeschaffenem, neuer Leichtigkeit und mehr Vertrauen in Dich und Dein Können.</p>
       </div>
     </div>
   </div>
@@ -1462,7 +1440,7 @@ section[id]{
         <div class="workshop-summary">
           <div class="summary-pill">24 &euro; inkl. Materialien</div>
           <div class="summary-pill">Nur 8 Pl&auml;tze pro Termin</div>
-          <div class="summary-pill">Jede Buchung finanziert einen kostenlosen Workshop</div>
+          <div class="summary-pill">Jede Buchung unterstützt einen kostenlosen Workshop für Menschen mit Fluchtgeschichte.</div>
         </div>
       </div>
     </div>
@@ -1475,7 +1453,7 @@ section[id]{
             <h3>Vasen f&uuml;r Dein Interieur</h3>
           </div>
           <div class="workshop-copy">
-            <p>Du gestaltest und kreierst Vasen, &Uuml;bert&ouml;pfe und Gef&auml;&szlig;e aus verschiedenen Materialien f&uuml;r Dein Zuhause.</p>
+            <p>Du gestaltest und kreierst Vasen, &Uuml;bert&ouml;pfe und Gef&auml;&szlig;e aus verschiedenen Materialien f&uuml;r Dein Zuhause. Sp&uuml;re die Materialien, nimm die Farben auf und genie&szlig;e das Hier und Jetzt.</p>
             <p>Jedes St&uuml;ck wird ein Unikat. Du probierst Dich aus und bringst mehr Farbe in Dein Leben &ndash; Entspannung inklusive.</p>
           </div>
           <div class="schedule-grid">
@@ -1537,7 +1515,7 @@ section[id]{
             <h3>Origami f&uuml;r Deine Achtsamkeit</h3>
           </div>
           <div class="workshop-copy">
-            <p>Ohne Druck und ganz in Ruhe gestaltest Du pr&auml;zise gefaltete Origami-Objekte.</p>
+            <p>Ohne Druck und ganz in Ruhe gestaltest Du pr&auml;zise gefaltete Origami-Objekte. Die entstandenen Objekte kannst Du in einem Rahmen zu einer Szene kombinieren.</p>
             <p>Du nimmst Schachteln und weitere St&uuml;cke mit nach Hause &ndash; jederzeit reproduzierbar f&uuml;r kleine Auszeiten.</p>
           </div>
           <div class="schedule-grid">
@@ -1599,22 +1577,24 @@ section[id]{
   <div class="container">
     <div class="format-grid">
       <div class="format-feature format-feature-company">
-        <div class="eyebrow">Für Unternehmen</div>
-        <h2>Für Unternehmen &ndash; Kreativität als echte Ressource</h2>
-        <p>Im Arbeitsalltag wird viel gedacht, organisiert, entschieden &ndash; aber selten gemacht. Genau hier setzt Klar &amp; Kunter an.</p>
-        <p>Unsere Workshops holen Mitarbeitende bewusst aus dem Kopf zurück ins Handeln. Für eine Stunde entsteht ein Raum, in dem nicht analysiert, sondern gestaltet wird. Nicht bewertet, sondern ausprobiert. Nicht perfektioniert, sondern einfach begonnen.</p>
-        <p>Warum das so wirkungsvoll ist: Wer ins Tun kommt, verändert seinen Zustand. Hände arbeiten &ndash; der Kopf wird stiller. Gedanken sortieren sich &ndash; neue Klarheit entsteht.</p>
-        <ul class="format-list">
-          <li>Achtsamkeit: Fokus auf den Moment statt Dauerablenkung</li>
-          <li>Resilienz: kleine, regelmäßige Unterbrechung von Stressmustern</li>
-          <li>Mentale Regeneration: echte Pause statt nur &bdquo;nicht arbeiten&ldquo;</li>
-          <li>Selbstwirksamkeit: wieder erleben, etwas erschaffen zu können</li>
-          <li>Kreatives Denken: neue Zugänge, die auch im Job wirken</li>
-          <li>Teamverbindung: gemeinsames, entspanntes Tun ohne Leistungsdruck</li>
-        </ul>
-        <div class="format-actions">
-          <a class="button button-primary" href="mailto:klarundkunter@gmail.com?subject=Anfrage%20Klar%20%26%20Kunter%20f%C3%BCr%20Unternehmen&body=Hallo%2C%0A%0Awir%20interessieren%20uns%20f%C3%BCr%20ein%20Klar%20%26%20Kunter-Format%20f%C3%BCr%20unser%20Unternehmen.%0A%0AWir%20denken%20an%3A%20________________%0A%0AUngef%C3%A4hre%20Gruppengr%C3%B6%C3%9Fe%3A%20________________%0A%0AOrt%20oder%20Rahmen%3A%20________________%0A%0AViele%20Gr%C3%BC%C3%9Fe">Unternehmensformat anfragen</a>
-          <a class="button button-secondary" href="#kontakt">Mehr Infos anfordern</a>
+        <div class="format-feature-copy">
+          <div class="eyebrow">Für Unternehmen</div>
+          <h2>Für Unternehmen &ndash; Kreativität als echte Ressource</h2>
+          <p>Im Arbeitsalltag wird viel gedacht, organisiert, entschieden &ndash; aber selten kann man ein Objekt als Resultat in den Händen halten. Genau hier setzt Klar &amp; Kunter an.</p>
+          <p>Unsere Workshops holen Mitarbeitende bewusst aus dem Kopf zurück ins Handeln. Für eine Stunde entsteht ein Raum, in dem nicht analysiert, sondern gestaltet wird. Nicht bewertet, sondern ausprobiert. Nicht perfektioniert, sondern einfach begonnen.</p>
+          <p>Warum das so wirkungsvoll ist: Wer ins Tun kommt, verändert seinen Zustand. Hände arbeiten &ndash; der Kopf wird stiller. Gedanken sortieren sich &ndash; neue Klarheit entsteht.</p>
+          <ul class="format-list">
+            <li>Achtsamkeit: Fokus auf den Moment statt Dauerablenkung</li>
+            <li>Resilienz: kleine, regelmäßige Unterbrechung von Stressmustern</li>
+            <li>Mentale Regeneration: echte Pause statt nur &bdquo;nicht arbeiten&ldquo;</li>
+            <li>Selbstwirksamkeit: wieder erleben, etwas erschaffen zu können</li>
+            <li>Kreatives Denken: neue Zugänge, die auch im Job wirken</li>
+            <li>Teamverbindung: gemeinsames, entspanntes Tun ohne Leistungsdruck</li>
+          </ul>
+          <div class="format-actions">
+            <a class="button button-primary" href="mailto:klarundkunter@gmail.com?subject=Anfrage%20Klar%20%26%20Kunter%20f%C3%BCr%20Unternehmen&body=Hallo%2C%0A%0Awir%20interessieren%20uns%20f%C3%BCr%20ein%20Klar%20%26%20Kunter-Format%20f%C3%BCr%20unser%20Unternehmen.%0A%0AWir%20denken%20an%3A%20________________%0A%0AUngef%C3%A4hre%20Gruppengr%C3%B6%C3%9Fe%3A%20________________%0A%0AOrt%20oder%20Rahmen%3A%20________________%0A%0AViele%20Gr%C3%BC%C3%9Fe">Unternehmensformat anfragen</a>
+            <a class="button button-secondary" href="#kontakt">Mehr Infos anfordern</a>
+          </div>
         </div>
       </div>
 
@@ -1643,6 +1623,10 @@ section[id]{
           <span>03</span>
           <h3>Warum sich das lohnt</h3>
           <p>Eine Stunde pro Woche, die mehr bewirkt als viele Maßnahmen. Weil sie dort ansetzt, wo Veränderung entsteht: im Tun.</p>
+          <p>ab 29 &euro; pro Teilnehmer</p>
+          <div class="format-card-actions">
+            <a class="mini-button" href="mailto:klarundkunter@gmail.com?subject=Unternehmensformat%20anfragen&body=Hallo%2C%0A%0Aich%20m%C3%B6chte%20gern%20ein%20Unternehmensformat%20anfragen.%0A%0ARahmen%3A%20________________%0A%0ATeilnehmerzahl%3A%20________________%0A%0AViele%20Gr%C3%BC%C3%9Fe">Jetzt anfragen</a>
+          </div>
         </div>
       </div>
     </div>
@@ -1653,14 +1637,29 @@ section[id]{
   <div class="container">
     <div class="format-grid">
       <div class="format-feature format-feature-home">
-        <div class="eyebrow">Klar &amp; Kunter bei Dir</div>
-        <h2>Für Privatpersonen &amp; Gruppen &ndash; Wieder ins Machen kommen</h2>
-        <p>Viele Menschen glauben, sie seien nicht kreativ. In Wahrheit haben sie nur verlernt, anzufangen.</p>
-        <p>Mit Klar &amp; Kunter entsteht genau dieser Anfang &ndash; leicht, ungezwungen und ohne Druck. Unsere Workshops bringen Dich zurück ins Handeln. Weg vom Grübeln, rein ins Ausprobieren. Weg vom &bdquo;Ich kann das nicht&ldquo;, hin zu &bdquo;Ich mache einfach mal&ldquo;.</p>
-        <p>Du musst nichts können. Du musst nur anfangen. Klar &amp; Kunter schafft genau diesen Raum.</p>
-        <div class="format-actions">
-          <a class="button button-primary" href="mailto:klarundkunter@gmail.com?subject=Anfrage%20Klar%20%26%20Kunter%20bei%20mir&body=Hallo%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20Klar%20%26%20Kunter%20an%20einem%20eigenen%20Ort.%0A%0AAnlass%3A%20________________%0A%0AUngef%C3%A4hre%20Gruppengr%C3%B6%C3%9Fe%3A%20________________%0A%0AOrt%3A%20________________%0A%0AViele%20Gr%C3%BC%C3%9Fe">Termin bei Dir anfragen</a>
-          <a class="button button-secondary" href="tel:+491749845286">Direkt anrufen</a>
+        <div class="format-feature-copy">
+          <div class="eyebrow">Klar &amp; Kunter bei Dir</div>
+          <h2>Wir kommen auch zu Dir nach Hause. Ob Einzelunterricht oder unter Freunden, lass uns besprechen, was Du brauchst.</h2>
+          <p>Ein Raum nur f&uuml;r Dich &ndash; um wieder ins Tun zu kommen.</p>
+          <p>Der Alltag kann auf viele Arten fordern. Als Alleinerziehende*r, im Beruf, im Ruhestand oder irgendwo dazwischen. Oft ist es nicht nur Stress &ndash; sondern das Gef&uuml;hl, st&auml;ndig zu funktionieren und selten wirklich bei sich zu sein.</p>
+          <p>Genau hier setzt Klar &amp; Kunter an.</p>
+          <p>Unsere Workshops sind eine Einladung, wieder ins Handeln zu kommen. Nicht nachdenken, nicht planen &ndash; sondern einfach anfangen. Mit den H&auml;nden arbeiten, Materialien sp&uuml;ren, etwas entstehen lassen.</p>
+          <p>Du brauchst keine Vorerfahrung. Nur den Wunsch, Dir selbst wieder n&auml;her zu kommen.</p>
+          <ul class="format-list">
+            <li>Achtsamkeit: Du bist im Moment, statt in Gedanken &uuml;berall gleichzeitig</li>
+            <li>Resilienz: kleine, regelm&auml;&szlig;ige Unterbrechungen vom Alltag geben neue Stabilit&auml;t</li>
+            <li>Mentale Regeneration: eine echte Pause, die sp&uuml;rbar wirkt</li>
+            <li>Selbstwirksamkeit: das gute Gef&uuml;hl, wieder etwas erschaffen zu k&ouml;nnen</li>
+            <li>Kreatives Denken: neue Wege entstehen &ndash; oft auch f&uuml;r andere Lebensbereiche</li>
+          </ul>
+          <p>F&uuml;r wen das besonders wertvoll ist: F&uuml;r Menschen, die viel tragen. F&uuml;r Menschen, die lange nicht mehr kreativ waren. F&uuml;r Menschen, die sich selbst wieder sp&uuml;ren m&ouml;chten.</p>
+          <p>Ob als Einzeltermin nur f&uuml;r Dich oder in einer kleinen, gesch&uuml;tzten Runde: Wir schaffen einen ruhigen, wertsch&auml;tzenden Rahmen, in dem Du einfach sein und machen kannst.</p>
+          <p>Ohne Druck. Ohne Bewertung. Ohne Anspruch, &bdquo;gut&ldquo; zu sein.</p>
+          <p>Du musst nichts leisten. Du darfst einfach wieder anfangen.</p>
+          <div class="format-actions">
+            <a class="button button-primary" href="mailto:klarundkunter@gmail.com?subject=Anfrage%20Klar%20%26%20Kunter%20bei%20mir&body=Hallo%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20Klar%20%26%20Kunter%20an%20einem%20eigenen%20Ort.%0A%0AAnlass%3A%20________________%0A%0AUngef%C3%A4hre%20Gruppengr%C3%B6%C3%9Fe%3A%20________________%0A%0AOrt%3A%20________________%0A%0AViele%20Gr%C3%BC%C3%9Fe">Termin anfragen</a>
+            <a class="button button-secondary" href="tel:+491749845286">Direkt anrufen</a>
+          </div>
         </div>
       </div>
 
