@@ -190,7 +190,7 @@ section[id]{
   position:relative;
   background:
     linear-gradient(rgba(18,15,14,.34), rgba(18,15,14,.40)),
-    url("https://raw.githubusercontent.com/KlarundKunter/KlarundKunter/main/KuK%20Bilder/KK%2018.jpg") center center / cover no-repeat;
+    url("KuK Bilder/KK 18.jpg") center center / cover no-repeat;
 }
 
 .hero-inner{
@@ -223,6 +223,14 @@ section[id]{
   font-size:clamp(1.05rem, 1.8vw, 1.35rem);
   line-height:1.45;
   color:rgba(255,255,255,.94);
+}
+
+.hero-lead span{
+  display:block;
+}
+
+.hero-lead span + span{
+  margin-top:4px;
 }
 
 .hero-facts{
@@ -660,57 +668,6 @@ section[id]{
   letter-spacing:.03em;
 }
 
-.booking-steps{
-  display:grid;
-  grid-template-columns:repeat(3, minmax(0, 1fr));
-  gap:12px;
-}
-
-.booking-step{
-  display:flex;
-  align-items:center;
-  gap:14px;
-  padding:15px 16px;
-  background:
-    var(--pastel-card-overlay-soft),
-    var(--pastel-surface) center/cover no-repeat;
-  border:1px solid var(--line);
-  border-radius:18px;
-  box-shadow:var(--shadow);
-}
-
-.booking-step-number{
-  width:34px;
-  height:34px;
-  flex:0 0 34px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:50%;
-  background:rgba(255,247,241,.92);
-  color:#4c413b;
-  font-size:12px;
-  font-weight:700;
-  letter-spacing:.08em;
-  border:1px solid rgba(184,143,124,.24);
-}
-
-.booking-step strong{
-  display:block;
-  font-family:Georgia, "Times New Roman", serif;
-  font-size:1.05rem;
-  font-weight:400;
-  line-height:1.15;
-  margin-bottom:2px;
-}
-
-.booking-step p{
-  margin:0;
-  color:var(--muted);
-  font-size:.94rem;
-  line-height:1.45;
-}
-
 .workshop-copy{
   padding:20px 22px;
   background:rgba(48,41,38,0.42);
@@ -801,6 +758,88 @@ section[id]{
 .slot-link:hover{
   background:#f7eee7;
   transform:translateY(-1px);
+}
+
+.booking-selection-box{
+  margin-top:24px;
+  padding:22px;
+  border-radius:24px;
+  background:rgba(255,250,246,.82);
+  border:1px solid rgba(184,143,124,.20);
+  box-shadow:0 16px 30px rgba(53,43,38,0.08);
+}
+
+.booking-selection-box h3{
+  font-size:1.35rem;
+  margin-bottom:10px;
+}
+
+.booking-selection-intro{
+  margin:0;
+  color:var(--muted);
+  font-size:.98rem;
+}
+
+.booking-selection-details{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:12px;
+  margin-top:18px;
+}
+
+.booking-selection-item{
+  padding:14px 16px;
+  border-radius:18px;
+  background:rgba(255,255,255,.72);
+  border:1px solid rgba(184,143,124,.16);
+}
+
+.booking-selection-item strong{
+  display:block;
+  margin-bottom:4px;
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+.booking-selection-item span{
+  display:block;
+  color:var(--text);
+  line-height:1.45;
+}
+
+.booking-selection-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:18px;
+}
+
+.selection-copy-button{
+  min-height:50px;
+  padding:0 20px;
+  border-radius:999px;
+  border:1px solid rgba(184,143,124,.26);
+  background:transparent;
+  color:var(--text);
+  font-size:12px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:.2s ease;
+}
+
+.selection-copy-button:hover{
+  background:rgba(255,248,241,.72);
+  border-color:rgba(184,143,124,.42);
+  color:var(--accent-dark);
+}
+
+.selection-status{
+  margin-top:14px;
+  color:var(--muted);
+  font-size:.93rem;
 }
 
 .schedule-actions{
@@ -1293,6 +1332,12 @@ section[id]{
   font-size:1rem;
 }
 
+.contact-panel a,
+.contact-microcopy a{
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
 .contact-list{
   display:grid;
   gap:12px;
@@ -1319,6 +1364,44 @@ section[id]{
 
 .mobile-booking-bar{
   display:none;
+}
+
+.legal-section{
+  padding-top:0;
+}
+
+.legal-card{
+  padding:30px;
+  border-radius:26px;
+  border:1px solid var(--line);
+  background:
+    var(--pastel-card-overlay-soft),
+    var(--pastel-surface) center/cover no-repeat;
+  box-shadow:var(--shadow);
+}
+
+.legal-copy{
+  max-width:620px;
+  color:var(--muted);
+}
+
+.legal-copy p:last-child{
+  margin-bottom:0;
+}
+
+.legal-copy a{
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+.legal-list{
+  margin:16px 0 0;
+  padding-left:18px;
+  color:var(--muted);
+}
+
+.legal-list li + li{
+  margin-top:8px;
 }
 
 .footer{
@@ -1354,7 +1437,6 @@ section[id]{
   }
 
   .booking-rail-grid,
-  .booking-steps,
   .examples,
   .info-grid{
     grid-template-columns:repeat(2, 1fr);
@@ -1482,10 +1564,13 @@ section[id]{
   }
 
   .booking-rail-grid,
-  .booking-steps,
   .examples,
   .info-grid,
   .format-side{
+    grid-template-columns:1fr;
+  }
+
+  .booking-selection-details{
     grid-template-columns:1fr;
   }
 
@@ -1595,7 +1680,11 @@ section[id]{
   <div class="hero-inner">
     <div class="hero-kicker">Kreative Workshops in Berlin</div>
     <h1>Weniger Stress beginnt nicht im Kopf.<br>Sondern in Deinen Händen.</h1>
-    <p class="hero-lead">Klar &amp; Kunter ist für Menschen mit und ohne Vorkenntnisse, die Ihren Stress und mental load reduzieren und Kreativität fördern möchten. Lass uns anfangen!</p>
+    <p class="hero-lead">
+      <span>Du brauchst keine Vorkenntnisse.</span>
+      <span>Du kommst einfach vorbei und machst mit.</span>
+      <span>Kreatives Arbeiten hilft, den Kopf ruhiger zu machen.</span>
+    </p>
     <div class="hero-facts">
       <div class="hero-fact">24 &euro; inkl. Materialien</div>
       <div class="hero-fact">Berlin-Wedding &amp; Charlottenburg</div>
@@ -1604,9 +1693,9 @@ section[id]{
     </div>
     <div class="hero-actions">
       <a class="button button-primary" href="#workshops">Workshop wählen</a>
-      <a class="button button-secondary tally-booking-trigger" href="mailto:klarundkunter@gmail.com?subject=Workshopplatz%20bei%20Klar%20%26%20Kunter&body=Hallo%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20einen%20Workshop%20bei%20Klar%20%26%20Kunter.%0A%0AWorkshop%3A%20_____________%0A%0AWunschtermin%3A%20_____________%0A%0AFrage%20oder%20Hinweis%3A%20_____________%0A%0AViele%20Gr%C3%BC%C3%9Fe" data-source="hero-cta">Platz anfragen</a>
+      <a class="button button-secondary" href="tel:+491749845286">Anrufen</a>
     </div>
-    <p class="hero-note">Ohne Vorkenntnisse · persönlich begleitet · direkt buchbar</p>
+    <p class="hero-note">Ohne Vorkenntnisse · persönlich begleitet · einfach anfragen</p>
   </div>
 </section>
 
@@ -1614,27 +1703,27 @@ section[id]{
   <div class="container">
     <div class="booking-rail-grid">
       <div class="booking-rail-card">
-        <span>Direkt buchbar</span>
+        <span>Einfach anfragen</span>
         <strong>12 Workshops im Mai</strong>
-        <p>Feste Termine in Wedding und Charlottenburg. Du kannst direkt den passenden Workshop auswählen.</p>
+        <p>Du wählst einen Workshop. Du wählst einen Termin. Dann meldest Du Dich per Mail oder Telefon.</p>
       </div>
 
       <div class="booking-rail-card">
         <span>Klar kalkulierbar</span>
         <strong>Nur 24 &euro; inkl. aller Materialien</strong>
-        <p>Materialien sind inklusive, die Gruppen bleiben klein. Einzelbuchung möglich.</p>
+        <p>Alles Material ist dabei. Du buchst nur den Termin, den Du möchtest.</p>
       </div>
 
       <div class="booking-rail-card">
         <span>Für alle, die neu anfangen</span>
         <strong>Come as you are.</strong>
-        <p>Du musst nichts können. Der Aufbau ist so gestaltet, dass Du schnell ins Tun kommst.</p>
+        <p>Du musst nichts können. Wir zeigen Dir alles Schritt für Schritt.</p>
       </div>
 
       <div class="booking-rail-card">
         <span>Weitere Formate</span>
         <strong>Auch für Teams und private Runden</strong>
-        <p>Neben den offenen Workshops gibt es Formate für Unternehmen, private Gruppen und Einzeltermine.</p>
+        <p>Es gibt auch Angebote für Teams, kleine Gruppen und Termine bei Dir zu Hause.</p>
       </div>
     </div>
   </div>
@@ -1645,21 +1734,16 @@ section[id]{
     <div class="intro-grid">
       <div class="intro-copy">
         <div class="eyebrow">Für wen es passt</div>
-        <h2>Du musst nicht schon kreativ sein, um hier richtig zu sein.</h2>
-        <p class="section-copy">Klar &amp; Kunter ist für Menschen, die wieder etwas mit den Händen machen möchten, aber keine Lust auf Kursdruck, Perfektion oder eine große Einstiegshürde haben.</p>
-        <p class="section-copy">Wenn Du gerade mehr Ruhe, Farbe und etwas Echtes brauchst, ist das hier der leichte Einstieg: ein schöner Rahmen, gute Materialien und genug Anleitung, damit Du nicht erst lange nachdenken musst.</p>
+        <h2>Du bist auch ohne Erfahrung genau richtig.</h2>
+        <p class="section-copy">Klar &amp; Kunter ist für Menschen, die wieder etwas mit den Händen machen möchten. Ohne Druck. Ohne Perfektion. Ohne komplizierten Einstieg.</p>
+        <p class="section-copy">Du bekommst einen schönen Rahmen, gutes Material und eine klare Anleitung. So kommst Du leicht ins Tun.</p>
       </div>
 
       <div class="intro-panel">
         <h3>Warum das leichter wirkt und Stress reduziert</h3>
-        <p>Du musst nichts vorbereiten, nichts mitbringen und keine Idee haben. Der Einstieg ist klar, die Gruppe klein und der Fokus liegt darauf, dass Du schnell ins Gestalten kommst.</p>
-        <p>Am Ende gehst Du mit etwas Selbstgemachtem nach Hause und meistens auch mit mehr Ruhe im Kopf, als Du angekommen bist.</p>
-        <p>Sobald du beginnst zu schneiden, zu falten, zu kleben, passiert etwas: Dein Kopf wird leiser. Dein Körper entspannter. Dein Fokus klarer.</p>
-        <p>Du bist für einen Moment raus aus To-Do-Listen, Erwartungen und Dauerablenkung – und ganz bei dir.</p>
-        <p>Kreatives Arbeiten senkt nachweislich Stress, weil es dich in einen Zustand bringt, in dem Gedanken zur Ruhe kommen und du wieder etwas erschaffst, statt nur zu reagieren.</p>
-        <p>Du spürst: Ich kann etwas gestalten. Ich kann etwas verändern.</p>
-        <p>Und genau dieses Gefühl wirkt nach – weit über den Workshop hinaus.</p>
-        <p>90 Minuten, die mehr sind als eine Pause. Ein Reset, den du mitnimmst in deinen Alltag.</p>
+        <p>Du musst nichts vorbereiten. Du musst nichts mitbringen. Du kannst einfach ankommen und anfangen.</p>
+        <p>Die Hände sind beschäftigt. Der Kopf wird ruhiger. Das tut vielen Menschen sofort gut.</p>
+        <p>Am Ende nimmst Du etwas Selbstgemachtes mit nach Hause. Und oft auch ein gutes Gefühl.</p>
       </div>
     </div>
   </div>
@@ -1671,37 +1755,13 @@ section[id]{
     <div class="workshops-head">
       <h2>Wähle Deinen Workshop</h2>
       <div class="workshops-intro">
-        <p class="workshops-sub">Vier Formate, feste Termine und kleine Gruppen. Wenn Dich ein Workshop anspricht, kannst Du direkt den passenden Termin anklicken, im Formular buchen oder kurz anrufen.</p>
+        <p class="workshops-sub">Vier Formate. Feste Termine. Kleine Gruppen. Wähle einfach unten den passenden Termin aus.</p>
         <div class="workshop-summary">
           <div class="summary-pill">24 &euro; inkl. Materialien</div>
           <div class="summary-pill">Max. 8 Plätze pro Termin</div>
           <div class="summary-pill">Do in Wedding · Fr in Charlottenburg</div>
         </div>
-        <div class="booking-steps">
-          <div class="booking-step">
-            <div class="booking-step-number">1</div>
-            <div>
-              <strong>Workshop wählen</strong>
-              <p>Such Dir das Format aus, das Dich gerade anspricht.</p>
-            </div>
-          </div>
-          <div class="booking-step">
-            <div class="booking-step-number">2</div>
-            <div>
-              <strong>Termin anklicken</strong>
-              <p>Wähle direkt unten Deinen passenden Zeitslot aus.</p>
-            </div>
-          </div>
-          <div class="booking-step">
-            <div class="booking-step-number">3</div>
-            <div>
-              <strong>Platz sichern</strong>
-              <p>Das Buchungsformular ist schon vorbereitet und braucht nur noch Deine Angaben.</p>
-            </div>
-          </div>
-        </div>
-        <p class="section-copy">Die Terminbuttons öffnen direkt das Buchungsformular mit Workshop, Datum, Uhrzeit und Ort.</p>
-        <p class="section-copy">Mit jeder Buchung unterstützt Du einen kostenlosen Workshop für Menschen mit Fluchtgeschichte.</p>
+        <p class="section-copy">Wenn Du unsicher bist, ruf kurz an. Wir helfen Dir gern weiter.</p>
       </div>
     </div>
 
@@ -1723,7 +1783,7 @@ section[id]{
               <div class="schedule-time">10:00&ndash;12:00 Uhr</div>
               <div class="schedule-location">Lemy&apos;s Caf&eacute;, Berlin-Wedding<br>(U-Rehberge)</div>
               <div class="slot-links">
-                <a class="slot-link tally-booking-trigger" href="mailto:klarundkunter@gmail.com?subject=Jetzt%20buchen%20%E2%80%93%20Vasen%20f%C3%BCr%20Dein%20Interieur%20am%2007.%20Mai&body=Hallo%2C%0A%0Aich%20m%C3%B6chte%20gern%20den%20Termin%20f%C3%BCr%20%E2%80%9EVasen%20f%C3%BCr%20Dein%20Interieur%E2%80%9C%20buchen.%0A%0ADatum%3A%2007.%20Mai%0A%0AUhrzeit%3A%2010%3A00%E2%80%9312%3A00%20Uhr%0A%0AOrt%3A%20Lemy%27s%20Caf%C3%A9%2C%20Berlin-Wedding%20%28U-Rehberge%29%0A%0AViele%20Gr%C3%BC%C3%9Fe" data-workshop="Vasen für Dein Interieur" data-date="07. Mai" data-time="10:00-12:00 Uhr" data-location="Lemy's Café, Berlin-Wedding (U-Rehberge)" data-slot-label="07. Mai buchen" data-source="workshop-slot">07. Mai buchen</a>
+                <a class="slot-link booking-selection-trigger" href="#kontakt" data-workshop="Vasen für Dein Interieur" data-date="07. Mai" data-time="10:00-12:00 Uhr" data-location="Lemy's Café, Berlin-Wedding (U-Rehberge)" data-slot-label="07. Mai" data-source="workshop-slot">07. Mai auswählen</a>
               </div>
             </div>
             <div class="schedule-card">
@@ -1732,8 +1792,8 @@ section[id]{
               <div class="schedule-time">14:00&ndash;16:00 Uhr<br>16:30&ndash;18:30 Uhr</div>
               <div class="schedule-location">Ulme 35, Berlin-Charlottenburg<br>(U-Neu-Westend)</div>
               <div class="slot-links">
-                <a class="slot-link tally-booking-trigger" href="mailto:klarundkunter@gmail.com?subject=Jetzt%20buchen%20%E2%80%93%20Vasen%20f%C3%BCr%20Dein%20Interieur%20am%2008.%20Mai%20um%2014%3A00%20Uhr&body=Hallo%2C%0A%0Aich%20m%C3%B6chte%20gern%20den%20Termin%20f%C3%BCr%20%E2%80%9EVasen%20f%C3%BCr%20Dein%20Interieur%E2%80%9C%20buchen.%0A%0ADatum%3A%2008.%20Mai%0A%0AUhrzeit%3A%2014%3A00%E2%80%9316%3A00%20Uhr%0A%0AOrt%3A%20Ulme%2035%2C%20Berlin-Charlottenburg%20%28U-Neu-Westend%29%0A%0AViele%20Gr%C3%BC%C3%9Fe" data-workshop="Vasen für Dein Interieur" data-date="08. Mai" data-time="14:00-16:00 Uhr" data-location="Ulme 35, Berlin-Charlottenburg (U-Neu-Westend)" data-slot-label="08. Mai · 14:00" data-source="workshop-slot">08. Mai · 14:00</a>
-                <a class="slot-link tally-booking-trigger" href="mailto:klarundkunter@gmail.com?subject=Jetzt%20buchen%20%E2%80%93%20Vasen%20f%C3%BCr%20Dein%20Interieur%20am%2008.%20Mai%20um%2016%3A30%20Uhr&body=Hallo%2C%0A%0Aich%20m%C3%B6chte%20gern%20den%20Termin%20f%C3%BCr%20%E2%80%9EVasen%20f%C3%BCr%20Dein%20Interieur%E2%80%9C%20buchen.%0A%0ADatum%3A%2008.%20Mai%0A%0AUhrzeit%3A%2016%3A30%E2%80%9318%3A30%20Uhr%0A%0AOrt%3A%20Ulme%2035%2C%20Berlin-Charlottenburg%20%28U-Neu-Westend%29%0A%0AViele%20Gr%C3%BC%C3%9Fe" data-workshop="Vasen für Dein Interieur" data-date="08. Mai" data-time="16:30-18:30 Uhr" data-location="Ulme 35, Berlin-Charlottenburg (U-Neu-Westend)" data-slot-label="08. Mai · 16:30" data-source="workshop-slot">08. Mai · 16:30</a>
+                <a class="slot-link booking-selection-trigger" href="#kontakt" data-workshop="Vasen für Dein Interieur" data-date="08. Mai" data-time="14:00-16:00 Uhr" data-location="Ulme 35, Berlin-Charlottenburg (U-Neu-Westend)" data-slot-label="08. Mai · 14:00" data-source="workshop-slot">08. Mai · 14:00 auswählen</a>
+                <a class="slot-link booking-selection-trigger" href="#kontakt" data-workshop="Vasen für Dein Interieur" data-date="08. Mai" data-time="16:30-18:30 Uhr" data-location="Ulme 35, Berlin-Charlottenburg (U-Neu-Westend)" data-slot-label="08. Mai · 16:30" data-source="workshop-slot">08. Mai · 16:30 auswählen</a>
               </div>
             </div>
           </div>
@@ -1761,7 +1821,7 @@ section[id]{
               <div class="schedule-time">10:00&ndash;12:00 Uhr</div>
               <div class="schedule-location">Lemy&apos;s Caf&eacute;, Berlin-Wedding<br>(U-Rehberge)</div>
               <div class="slot-links">
-                <a class="slot-link tally-booking-trigger" href="mailto:klarundkunter@gmail.com?subject=Jetzt%20buchen%20%E2%80%93%20Blumen%20f%C3%BCr%20Deine%20Stimmung%20am%2014.%20Mai&body=Hallo%2C%0A%0Aich%20m%C3%B6chte%20gern%20den%20Termin%20f%C3%BCr%20%E2%80%9EBlumen%20f%C3%BCr%20Deine%20Stimmung%E2%80%9C%20buchen.%0A%0ADatum%3A%2014.%20Mai%0A%0AUhrzeit%3A%2010%3A00%E2%80%9312%3A00%20Uhr%0A%0AOrt%3A%20Lemy%27s%20Caf%C3%A9%2C%20Berlin-Wedding%20%28U-Rehberge%29%0A%0AViele%20Gr%C3%BC%C3%9Fe" data-workshop="Blumen für Deine Stimmung" data-date="14. Mai" data-time="10:00-12:00 Uhr" data-location="Lemy's Café, Berlin-Wedding (U-Rehberge)" data-slot-label="14. Mai buchen" data-source="workshop-slot">14. Mai buchen</a>
+                <a class="slot-link booking-selection-trigger" href="#kontakt" data-workshop="Blumen für Deine Stimmung" data-date="14. Mai" data-time="10:00-12:00 Uhr" data-location="Lemy's Café, Berlin-Wedding (U-Rehberge)" data-slot-label="14. Mai" data-source="workshop-slot">14. Mai auswählen</a>
               </div>
             </div>
             <div class="schedule-card">
@@ -1770,8 +1830,8 @@ section[id]{
               <div class="schedule-time">14:00&ndash;16:00 Uhr<br>16:30&ndash;18:30 Uhr</div>
               <div class="schedule-location">Ulme 35, Berlin-Charlottenburg<br>(U-Neu-Westend)</div>
               <div class="slot-links">
-                <a class="slot-link tally-booking-trigger" href="mailto:klarundkunter@gmail.com?subject=Jetzt%20buchen%20%E2%80%93%20Blumen%20f%C3%BCr%20Deine%20Stimmung%20am%2015.%20Mai%20um%2014%3A00%20Uhr&body=Hallo%2C%0A%0Aich%20m%C3%B6chte%20gern%20den%20Termin%20f%C3%BCr%20%E2%80%9EBlumen%20f%C3%BCr%20Deine%20Stimmung%E2%80%9C%20buchen.%0A%0ADatum%3A%2015.%20Mai%0A%0AUhrzeit%3A%2014%3A00%E2%80%9316%3A00%20Uhr%0A%0AOrt%3A%20Ulme%2035%2C%20Berlin-Charlottenburg%20%28U-Neu-Westend%29%0A%0AViele%20Gr%C3%BC%C3%9Fe" data-workshop="Blumen für Deine Stimmung" data-date="15. Mai" data-time="14:00-16:00 Uhr" data-location="Ulme 35, Berlin-Charlottenburg (U-Neu-Westend)" data-slot-label="15. Mai · 14:00" data-source="workshop-slot">15. Mai · 14:00</a>
-                <a class="slot-link tally-booking-trigger" href="mailto:klarundkunter@gmail.com?subject=Jetzt%20buchen%20%E2%80%93%20Blumen%20f%C3%BCr%20Deine%20Stimmung%20am%2015.%20Mai%20um%2016%3A30%20Uhr&body=Hallo%2C%0A%0Aich%20m%C3%B6chte%20gern%20den%20Termin%20f%C3%BCr%20%E2%80%9EBlumen%20f%C3%BCr%20Deine%20Stimmung%E2%80%9C%20buchen.%0A%0ADatum%3A%2015.%20Mai%0A%0AUhrzeit%3A%2016%3A30%E2%80%9318%3A30%20Uhr%0A%0AOrt%3A%20Ulme%2035%2C%20Berlin-Charlottenburg%20%28U-Neu-Westend%29%0A%0AViele%20Gr%C3%BC%C3%9Fe" data-workshop="Blumen für Deine Stimmung" data-date="15. Mai" data-time="16:30-18:30 Uhr" data-location="Ulme 35, Berlin-Charlottenburg (U-Neu-Westend)" data-slot-label="15. Mai · 16:30" data-source="workshop-slot">15. Mai · 16:30</a>
+                <a class="slot-link booking-selection-trigger" href="#kontakt" data-workshop="Blumen für Deine Stimmung" data-date="15. Mai" data-time="14:00-16:00 Uhr" data-location="Ulme 35, Berlin-Charlottenburg (U-Neu-Westend)" data-slot-label="15. Mai · 14:00" data-source="workshop-slot">15. Mai · 14:00 auswählen</a>
+                <a class="slot-link booking-selection-trigger" href="#kontakt" data-workshop="Blumen für Deine Stimmung" data-date="15. Mai" data-time="16:30-18:30 Uhr" data-location="Ulme 35, Berlin-Charlottenburg (U-Neu-Westend)" data-slot-label="15. Mai · 16:30" data-source="workshop-slot">15. Mai · 16:30 auswählen</a>
               </div>
             </div>
           </div>
@@ -1799,7 +1859,7 @@ section[id]{
               <div class="schedule-time">10:00&ndash;12:00 Uhr</div>
               <div class="schedule-location">Lemy&apos;s Caf&eacute;, Berlin-Wedding<br>(U-Rehberge)</div>
               <div class="slot-links">
-                <a class="slot-link tally-booking-trigger" href="mailto:klarundkunter@gmail.com?subject=Jetzt%20buchen%20%E2%80%93%20Origami%20f%C3%BCr%20Deine%20Achtsamkeit%20am%2021.%20Mai&body=Hallo%2C%0A%0Aich%20m%C3%B6chte%20gern%20den%20Termin%20f%C3%BCr%20%E2%80%9EOrigami%20f%C3%BCr%20Deine%20Achtsamkeit%E2%80%9C%20buchen.%0A%0ADatum%3A%2021.%20Mai%0A%0AUhrzeit%3A%2010%3A00%E2%80%9312%3A00%20Uhr%0A%0AOrt%3A%20Lemy%27s%20Caf%C3%A9%2C%20Berlin-Wedding%20%28U-Rehberge%29%0A%0AViele%20Gr%C3%BC%C3%9Fe" data-workshop="Origami für Deine Achtsamkeit" data-date="21. Mai" data-time="10:00-12:00 Uhr" data-location="Lemy's Café, Berlin-Wedding (U-Rehberge)" data-slot-label="21. Mai buchen" data-source="workshop-slot">21. Mai buchen</a>
+                <a class="slot-link booking-selection-trigger" href="#kontakt" data-workshop="Origami für Deine Achtsamkeit" data-date="21. Mai" data-time="10:00-12:00 Uhr" data-location="Lemy's Café, Berlin-Wedding (U-Rehberge)" data-slot-label="21. Mai" data-source="workshop-slot">21. Mai auswählen</a>
               </div>
             </div>
             <div class="schedule-card">
@@ -1808,8 +1868,8 @@ section[id]{
               <div class="schedule-time">14:00&ndash;16:00 Uhr<br>16:30&ndash;18:30 Uhr</div>
               <div class="schedule-location">Ulme 35, Berlin-Charlottenburg<br>(U-Neu-Westend)</div>
               <div class="slot-links">
-                <a class="slot-link tally-booking-trigger" href="mailto:klarundkunter@gmail.com?subject=Jetzt%20buchen%20%E2%80%93%20Origami%20f%C3%BCr%20Deine%20Achtsamkeit%20am%2022.%20Mai%20um%2014%3A00%20Uhr&body=Hallo%2C%0A%0Aich%20m%C3%B6chte%20gern%20den%20Termin%20f%C3%BCr%20%E2%80%9EOrigami%20f%C3%BCr%20Deine%20Achtsamkeit%E2%80%9C%20buchen.%0A%0ADatum%3A%2022.%20Mai%0A%0AUhrzeit%3A%2014%3A00%E2%80%9316%3A00%20Uhr%0A%0AOrt%3A%20Ulme%2035%2C%20Berlin-Charlottenburg%20%28U-Neu-Westend%29%0A%0AViele%20Gr%C3%BC%C3%9Fe" data-workshop="Origami für Deine Achtsamkeit" data-date="22. Mai" data-time="14:00-16:00 Uhr" data-location="Ulme 35, Berlin-Charlottenburg (U-Neu-Westend)" data-slot-label="22. Mai · 14:00" data-source="workshop-slot">22. Mai · 14:00</a>
-                <a class="slot-link tally-booking-trigger" href="mailto:klarundkunter@gmail.com?subject=Jetzt%20buchen%20%E2%80%93%20Origami%20f%C3%BCr%20Deine%20Achtsamkeit%20am%2022.%20Mai%20um%2016%3A30%20Uhr&body=Hallo%2C%0A%0Aich%20m%C3%B6chte%20gern%20den%20Termin%20f%C3%BCr%20%E2%80%9EOrigami%20f%C3%BCr%20Deine%20Achtsamkeit%E2%80%9C%20buchen.%0A%0ADatum%3A%2022.%20Mai%0A%0AUhrzeit%3A%2016%3A30%E2%80%9318%3A30%20Uhr%0A%0AOrt%3A%20Ulme%2035%2C%20Berlin-Charlottenburg%20%28U-Neu-Westend%29%0A%0AViele%20Gr%C3%BC%C3%9Fe" data-workshop="Origami für Deine Achtsamkeit" data-date="22. Mai" data-time="16:30-18:30 Uhr" data-location="Ulme 35, Berlin-Charlottenburg (U-Neu-Westend)" data-slot-label="22. Mai · 16:30" data-source="workshop-slot">22. Mai · 16:30</a>
+                <a class="slot-link booking-selection-trigger" href="#kontakt" data-workshop="Origami für Deine Achtsamkeit" data-date="22. Mai" data-time="14:00-16:00 Uhr" data-location="Ulme 35, Berlin-Charlottenburg (U-Neu-Westend)" data-slot-label="22. Mai · 14:00" data-source="workshop-slot">22. Mai · 14:00 auswählen</a>
+                <a class="slot-link booking-selection-trigger" href="#kontakt" data-workshop="Origami für Deine Achtsamkeit" data-date="22. Mai" data-time="16:30-18:30 Uhr" data-location="Ulme 35, Berlin-Charlottenburg (U-Neu-Westend)" data-slot-label="22. Mai · 16:30" data-source="workshop-slot">22. Mai · 16:30 auswählen</a>
               </div>
             </div>
           </div>
@@ -1837,7 +1897,7 @@ section[id]{
               <div class="schedule-time">10:00&ndash;12:00 Uhr</div>
               <div class="schedule-location">Lemy&apos;s Caf&eacute;, Berlin-Wedding<br>(U-Rehberge)</div>
               <div class="slot-links">
-                <a class="slot-link tally-booking-trigger" href="mailto:klarundkunter@gmail.com?subject=Jetzt%20buchen%20%E2%80%93%20Collagen%20f%C3%BCr%20Deine%20Phantasie%20am%2028.%20Mai&body=Hallo%2C%0A%0Aich%20m%C3%B6chte%20gern%20den%20Termin%20f%C3%BCr%20%E2%80%9ECollagen%20f%C3%BCr%20Deine%20Phantasie%E2%80%9C%20buchen.%0A%0ADatum%3A%2028.%20Mai%0A%0AUhrzeit%3A%2010%3A00%E2%80%9312%3A00%20Uhr%0A%0AOrt%3A%20Lemy%27s%20Caf%C3%A9%2C%20Berlin-Wedding%20%28U-Rehberge%29%0A%0AViele%20Gr%C3%BC%C3%9Fe" data-workshop="Collagen für Deine Phantasie" data-date="28. Mai" data-time="10:00-12:00 Uhr" data-location="Lemy's Café, Berlin-Wedding (U-Rehberge)" data-slot-label="28. Mai buchen" data-source="workshop-slot">28. Mai buchen</a>
+                <a class="slot-link booking-selection-trigger" href="#kontakt" data-workshop="Collagen für Deine Phantasie" data-date="28. Mai" data-time="10:00-12:00 Uhr" data-location="Lemy's Café, Berlin-Wedding (U-Rehberge)" data-slot-label="28. Mai" data-source="workshop-slot">28. Mai auswählen</a>
               </div>
             </div>
             <div class="schedule-card">
@@ -1846,8 +1906,8 @@ section[id]{
               <div class="schedule-time">14:00&ndash;16:00 Uhr<br>16:30&ndash;18:30 Uhr</div>
               <div class="schedule-location">Ulme 35, Berlin-Charlottenburg<br>(U-Neu-Westend)</div>
               <div class="slot-links">
-                <a class="slot-link tally-booking-trigger" href="mailto:klarundkunter@gmail.com?subject=Jetzt%20buchen%20%E2%80%93%20Collagen%20f%C3%BCr%20Deine%20Phantasie%20am%2029.%20Mai%20um%2014%3A00%20Uhr&body=Hallo%2C%0A%0Aich%20m%C3%B6chte%20gern%20den%20Termin%20f%C3%BCr%20%E2%80%9ECollagen%20f%C3%BCr%20Deine%20Phantasie%E2%80%9C%20buchen.%0A%0ADatum%3A%2029.%20Mai%0A%0AUhrzeit%3A%2014%3A00%E2%80%9316%3A00%20Uhr%0A%0AOrt%3A%20Ulme%2035%2C%20Berlin-Charlottenburg%20%28U-Neu-Westend%29%0A%0AViele%20Gr%C3%BC%C3%9Fe" data-workshop="Collagen für Deine Phantasie" data-date="29. Mai" data-time="14:00-16:00 Uhr" data-location="Ulme 35, Berlin-Charlottenburg (U-Neu-Westend)" data-slot-label="29. Mai · 14:00" data-source="workshop-slot">29. Mai · 14:00</a>
-                <a class="slot-link tally-booking-trigger" href="mailto:klarundkunter@gmail.com?subject=Jetzt%20buchen%20%E2%80%93%20Collagen%20f%C3%BCr%20Deine%20Phantasie%20am%2029.%20Mai%20um%2016%3A30%20Uhr&body=Hallo%2C%0A%0Aich%20m%C3%B6chte%20gern%20den%20Termin%20f%C3%BCr%20%E2%80%9ECollagen%20f%C3%BCr%20Deine%20Phantasie%E2%80%9C%20buchen.%0A%0ADatum%3A%2029.%20Mai%0A%0AUhrzeit%3A%2016%3A30%E2%80%9318%3A30%20Uhr%0A%0AOrt%3A%20Ulme%2035%2C%20Berlin-Charlottenburg%20%28U-Neu-Westend%29%0A%0AViele%20Gr%C3%BC%C3%9Fe" data-workshop="Collagen für Deine Phantasie" data-date="29. Mai" data-time="16:30-18:30 Uhr" data-location="Ulme 35, Berlin-Charlottenburg (U-Neu-Westend)" data-slot-label="29. Mai · 16:30" data-source="workshop-slot">29. Mai · 16:30</a>
+                <a class="slot-link booking-selection-trigger" href="#kontakt" data-workshop="Collagen für Deine Phantasie" data-date="29. Mai" data-time="14:00-16:00 Uhr" data-location="Ulme 35, Berlin-Charlottenburg (U-Neu-Westend)" data-slot-label="29. Mai · 14:00" data-source="workshop-slot">29. Mai · 14:00 auswählen</a>
+                <a class="slot-link booking-selection-trigger" href="#kontakt" data-workshop="Collagen für Deine Phantasie" data-date="29. Mai" data-time="16:30-18:30 Uhr" data-location="Ulme 35, Berlin-Charlottenburg (U-Neu-Westend)" data-slot-label="29. Mai · 16:30" data-source="workshop-slot">29. Mai · 16:30 auswählen</a>
               </div>
             </div>
           </div>
@@ -1998,19 +2058,46 @@ section[id]{
     <div class="contact-grid">
       <div class="contact-box">
         <div class="eyebrow">Anfrage</div>
-        <h2>Du willst buchen oder kurz klären, welcher Workshop zu Dir passt?</h2>
-        <p>Dann schreib mir einfach oder ruf an. Wir besprechen was zu Dir passt.</p>
-        <p><span class="highlight">Am einfachsten:</span> Oben Workshop und Termin anklicken, Formular ausfüllen, Platz sichern.</p>
+        <h2>Du möchtest einen Workshop buchen oder erst kurz etwas fragen?</h2>
+        <p>Dann schreib mir einfach oder ruf an. Wir schauen gemeinsam, welcher Termin gut zu Dir passt.</p>
+        <p><span class="highlight">Am einfachsten:</span> Workshop auswählen, passenden Termin anklicken und per Mail anfragen oder kurz anrufen.</p>
         <div class="contact-pills">
           <div class="contact-pill">24 &euro; inkl. Materialien</div>
           <div class="contact-pill">Max. 8 Plätze</div>
-          <div class="contact-pill">Direkt buchbar</div>
+          <div class="contact-pill">Einfach anfragen</div>
+        </div>
+        <div class="booking-selection-box" id="booking-selection-box">
+          <h3>Dein ausgewählter Termin</h3>
+          <p class="booking-selection-intro" id="booking-selection-intro">Wähle oben einen Termin aus. Wir übernehmen Workshop, Datum, Uhrzeit und Ort hier unten für Dich.</p>
+          <div class="booking-selection-details" id="booking-selection-details" hidden>
+            <div class="booking-selection-item">
+              <strong>Workshop</strong>
+              <span id="booking-selection-workshop"></span>
+            </div>
+            <div class="booking-selection-item">
+              <strong>Datum</strong>
+              <span id="booking-selection-date"></span>
+            </div>
+            <div class="booking-selection-item">
+              <strong>Uhrzeit</strong>
+              <span id="booking-selection-time"></span>
+            </div>
+            <div class="booking-selection-item">
+              <strong>Ort</strong>
+              <span id="booking-selection-location"></span>
+            </div>
+          </div>
+          <div class="booking-selection-actions">
+            <a class="button button-primary" id="booking-mail-link" href="mailto:klarundkunter@gmail.com?subject=Workshopanfrage%20bei%20Klar%20%26%20Kunter&body=Hallo%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20einen%20Workshop%20bei%20Klar%20%26%20Kunter.%0A%0AWorkshop%3A%20_____________%0A%0AWunschtermin%3A%20_____________%0A%0AFrage%20oder%20Hinweis%3A%20_____________%0A%0AViele%20Gr%C3%BC%C3%9Fe">Auswahl per Mail senden</a>
+            <button class="selection-copy-button" id="booking-copy-button" type="button">Auswahl kopieren</button>
+          </div>
+          <p class="selection-status" id="booking-selection-status" aria-live="polite">Wenn Dein Mailprogramm nicht aufgeht, kannst Du die Auswahl kopieren oder direkt anrufen.</p>
         </div>
         <div class="contact-actions">
-          <a class="button button-primary" href="#workshops">Jetzt Workshop wählen</a>
-          <a class="button button-secondary" href="mailto:klarundkunter@gmail.com?subject=Workshopplatz%20bei%20Klar%20%26%20Kunter&body=Hallo%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20einen%20Workshop%20bei%20Klar%20%26%20Kunter.%0A%0AWorkshop%3A%20_____________%0A%0AWunschtermin%3A%20_____________%0A%0AFrage%20oder%20Hinweis%3A%20_____________%0A%0AViele%20Gr%C3%BC%C3%9Fe">Frage per Mail</a>
+          <a class="button button-secondary" href="#workshops">Zu den Workshops</a>
+          <a class="button button-secondary" href="tel:+491749845286">Anrufen</a>
         </div>
-        <p class="contact-microcopy">Wenn Du unsicher bist, reicht auch eine kurze Mail mit Workshopname oder Wunschtermin.</p>
+        <p class="contact-microcopy">Du kannst uns auch direkt an <a href="mailto:klarundkunter@gmail.com">klarundkunter@gmail.com</a> schreiben oder telefonisch buchen.</p>
       </div>
 
       <div class="contact-panel">
@@ -2020,7 +2107,12 @@ section[id]{
         <div class="contact-list">
           <div class="contact-item">
             <span class="contact-label">E-Mail</span>
-            <div class="contact-value">klarundkunter@gmail.com</div>
+            <div class="contact-value"><a href="mailto:klarundkunter@gmail.com">klarundkunter@gmail.com</a></div>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-label">Telefon</span>
+            <div class="contact-value"><a href="tel:+491749845286">+49 174 9845286</a></div>
           </div>
 
           <div class="contact-item">
@@ -2044,9 +2136,51 @@ section[id]{
 </section>
 
 <div class="mobile-booking-bar">
-  <a class="button button-primary" href="#workshops">Jetzt buchen</a>
+  <a class="button button-primary" href="#workshops">Workshops</a>
   <a class="button button-secondary" href="tel:+491749845286">Anrufen</a>
 </div>
+
+<section class="section legal-section" id="impressum">
+  <div class="container">
+    <div class="legal-card">
+      <div class="eyebrow">Rechtliches</div>
+      <h2>Impressum</h2>
+      <div class="legal-copy">
+        <p><strong>Angaben gemäß § 5 TMG</strong></p>
+        <p>
+          Jeannette Sachse<br>
+          Akazienallee 40<br>
+          14050 Berlin<br>
+          Deutschland
+        </p>
+        <p>
+          E-Mail: <a href="mailto:klarundkunter@gmail.com">klarundkunter@gmail.com</a><br>
+          Telefon: <a href="tel:+491749845286">+49 174 9845286</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section legal-section" id="datenschutz">
+  <div class="container">
+    <div class="legal-card">
+      <div class="eyebrow">Rechtliches</div>
+      <h2>Datenschutz</h2>
+      <div class="legal-copy">
+        <p>Wenn Du uns per E-Mail, Telefon oder über die Workshop-Auswahl kontaktierst, verarbeiten wir die Angaben, die Du uns mitteilst, damit wir Deine Anfrage beantworten und einen passenden Workshop-Termin organisieren können.</p>
+        <ul class="legal-list">
+          <li><strong>Verantwortlich:</strong> Jeannette Sachse, Akazienallee 40, 14050 Berlin, <a href="mailto:klarundkunter@gmail.com">klarundkunter@gmail.com</a>, <a href="tel:+491749845286">+49 174 9845286</a></li>
+          <li><strong>Zweck:</strong> Bearbeitung von Workshop-Anfragen, Terminabstimmung und Kommunikation zu Buchungen.</li>
+          <li><strong>Rechtsgrundlagen:</strong> Art. 6 Abs. 1 lit. b DSGVO für Anbahnung und Durchführung von Buchungen sowie Art. 6 Abs. 1 lit. f DSGVO für allgemeine Kontaktanfragen und organisatorische Kommunikation.</li>
+          <li><strong>Speicherdauer:</strong> Wir speichern Deine Angaben nur so lange, wie sie für die Bearbeitung Deiner Anfrage oder gesetzliche Aufbewahrungspflichten erforderlich sind.</li>
+          <li><strong>Deine Rechte:</strong> Du kannst Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung und Widerspruch verlangen sowie Dich bei einer Datenschutz-Aufsichtsbehörde beschweren.</li>
+          <li><strong>Technische Bereitstellung:</strong> Beim Aufruf der Website können technisch notwendige Verbindungsdaten verarbeitet werden, damit die Seite ausgeliefert und sicher betrieben werden kann.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer class="footer">
   <div class="container">
@@ -2054,14 +2188,136 @@ section[id]{
       <div>© Klar &amp; Kunter</div>
       <div class="footer-links">
         <a href="mailto:klarundkunter@gmail.com">klarundkunter@gmail.com</a>
-        <a href="#">Impressum</a>
-        <a href="#">Datenschutz</a>
+        <a href="#impressum">Impressum</a>
+        <a href="#datenschutz">Datenschutz</a>
       </div>
     </div>
   </div>
 </footer>
 
 <script>
+(function () {
+  const triggers = document.querySelectorAll(".booking-selection-trigger");
+  const details = document.getElementById("booking-selection-details");
+  const intro = document.getElementById("booking-selection-intro");
+  const status = document.getElementById("booking-selection-status");
+  const mailLink = document.getElementById("booking-mail-link");
+  const copyButton = document.getElementById("booking-copy-button");
+  const workshop = document.getElementById("booking-selection-workshop");
+  const date = document.getElementById("booking-selection-date");
+  const time = document.getElementById("booking-selection-time");
+  const location = document.getElementById("booking-selection-location");
+  const contactSection = document.getElementById("kontakt");
+
+  if (!triggers.length || !details || !intro || !status || !mailLink || !copyButton || !workshop || !date || !time || !location || !contactSection) {
+    return;
+  }
+
+  function buildMailto(data) {
+    const subject = "Workshopanfrage – " + data.workshop + " am " + data.date;
+    const body = [
+      "Hallo,",
+      "",
+      "ich möchte gerne folgenden Workshop-Termin anfragen:",
+      "",
+      "Workshop: " + data.workshop,
+      "Datum: " + data.date,
+      "Uhrzeit: " + data.time,
+      "Ort: " + data.location,
+      "",
+      "Name: _____________",
+      "Telefon: _____________",
+      "Frage oder Hinweis: _____________",
+      "",
+      "Viele Grüße"
+    ].join("\n");
+
+    return "mailto:klarundkunter@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+  }
+
+  function buildCopyText(data) {
+    return [
+      "Workshopanfrage bei Klar & Kunter",
+      "",
+      "Workshop: " + data.workshop,
+      "Datum: " + data.date,
+      "Uhrzeit: " + data.time,
+      "Ort: " + data.location,
+      "",
+      "Kontakt: klarundkunter@gmail.com",
+      "Telefon: +49 174 9845286"
+    ].join("\n");
+  }
+
+  function copyText(value) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(value);
+    }
+
+    return new Promise(function (resolve, reject) {
+      const helper = document.createElement("textarea");
+      helper.value = value;
+      helper.setAttribute("readonly", "");
+      helper.style.position = "absolute";
+      helper.style.left = "-9999px";
+      document.body.appendChild(helper);
+      helper.select();
+
+      try {
+        document.execCommand("copy");
+        document.body.removeChild(helper);
+        resolve();
+      } catch (error) {
+        document.body.removeChild(helper);
+        reject(error);
+      }
+    });
+  }
+
+  triggers.forEach(function (trigger) {
+    trigger.addEventListener("click", function (event) {
+      event.preventDefault();
+
+      const data = {
+        workshop: trigger.dataset.workshop || "",
+        date: trigger.dataset.date || "",
+        time: trigger.dataset.time || "",
+        location: trigger.dataset.location || "",
+        slotLabel: trigger.dataset.slotLabel || trigger.textContent.trim()
+      };
+
+      workshop.textContent = data.workshop;
+      date.textContent = data.date;
+      time.textContent = data.time;
+      location.textContent = data.location;
+      intro.textContent = "Ausgewählt: " + data.slotLabel + ". Du kannst die Anfrage jetzt direkt per Mail senden oder die Angaben kopieren.";
+      status.textContent = "Wenn kein Mailprogramm aufgeht, kopiere die Auswahl oder ruf uns direkt an.";
+      details.hidden = false;
+      mailLink.href = buildMailto(data);
+      copyButton.dataset.copyText = buildCopyText(data);
+
+      contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+
+  copyButton.addEventListener("click", function () {
+    const value = copyButton.dataset.copyText || "";
+
+    if (!value) {
+      status.textContent = "Wähle zuerst oben einen Termin aus.";
+      return;
+    }
+
+    copyText(value)
+      .then(function () {
+        status.textContent = "Die Auswahl wurde in die Zwischenablage kopiert.";
+      })
+      .catch(function () {
+        status.textContent = "Das Kopieren hat nicht geklappt. Nutze bitte die Mail-Adresse oder ruf direkt an.";
+      });
+  });
+})();
+
 window.KUK_TALLY_BOOKING = {
   // Trage hier die Tally Form-ID oder eine normale Tally-URL ein.
   formId: "",
