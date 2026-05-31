@@ -2393,8 +2393,7 @@ section[id]{
       mailLink.href = buildMailto(data);
       smsLink.href = buildSmsLink(data);
       copyButton.dataset.copyText = buildCopyText(data);
-
-      contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.location.href = mailLink.href;
     });
   });
 
