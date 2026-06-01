@@ -11,11 +11,11 @@
 <noscript>
 <style>
 .card1{background:url("KuK Bilder/optimized/workshop-ton1-1200.jpg") center/cover no-repeat}
-.card2{background:url("KuK Bilder/optimized/workshop-ton2-1200.jpg") center/cover no-repeat}
+.card2{background:url("KuK Bilder/optimized/workshop-ton2-1200.jpg") 74% center/cover no-repeat}
 .card3{background:url("KuK Bilder/optimized/workshop-blumen-1200.jpg") center/cover no-repeat}
 .card4{background:url("KuK Bilder/optimized/workshop-midsommar-1200.jpg") center/cover no-repeat}
 .format-feature-company{background-image:url("KuK Bilder/optimized/company-1400.jpg")}
-.format-feature-home{background-image:url("KuK Bilder/optimized/homevisit-1400.jpg")}
+.format-feature-home{background-image:url("KuK Bilder/optimized/homevisit-1400.jpg");background-position:35% center;background-size:cover;background-repeat:no-repeat}
 </style>
 </noscript>
 <style>
@@ -608,6 +608,10 @@ section[id]{
   background-repeat:no-repeat;
 }
 
+.card2.deferred-bg{
+  background-position:74% center;
+}
+
 .card:hover{
   transform:translateY(-4px);
   box-shadow:0 34px 62px rgba(53,43,38,0.22);
@@ -999,6 +1003,10 @@ section[id]{
   position:relative;
   overflow:hidden;
   isolation:isolate;
+}
+
+.format-feature-home{
+  background-position:35% center;
 }
 
 .format-feature::before{
