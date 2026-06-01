@@ -766,6 +766,14 @@ section[id]{
   color:rgba(255,255,255,0.9);
 }
 
+.schedule-price{
+  margin-top:10px;
+  font-size:14px;
+  line-height:1.5;
+  color:#ffffff;
+  font-weight:600;
+}
+
 .slot-links{
   display:grid;
   gap:8px;
@@ -1815,6 +1823,7 @@ section[id]{
               <div class="schedule-date">05. Juni</div>
               <div class="schedule-time">14:00&ndash;16:00 Uhr<br>16:30&ndash;18:30 Uhr</div>
               <div class="schedule-location">Ulme 35, Berlin-Charlottenburg<br>(U-Neu-Westend)</div>
+              <div class="schedule-price">24 &euro; inkl. Materialien</div>
               <div class="slot-links">
                 <a class="slot-link booking-selection-trigger" href="#kontakt" data-workshop="Ton arbeiten | Teil 1" data-date="05. Juni" data-time="14:00-16:00 Uhr" data-location="Ulme 35, Ulmenallee 35, 14050 Berlin (U-Neu-Westend)" data-slot-label="05. Juni · 14:00" data-source="workshop-slot">05. Juni · 14:00 auswählen</a>
                 <a class="slot-link booking-selection-trigger" href="#kontakt" data-workshop="Ton arbeiten | Teil 1" data-date="05. Juni" data-time="16:30-18:30 Uhr" data-location="Ulme 35, Ulmenallee 35, 14050 Berlin (U-Neu-Westend)" data-slot-label="05. Juni · 16:30" data-source="workshop-slot">05. Juni · 16:30 auswählen</a>
@@ -1844,6 +1853,7 @@ section[id]{
               <div class="schedule-date">12. Juni</div>
               <div class="schedule-time">14:00&ndash;16:00 Uhr<br>16:30&ndash;18:30 Uhr</div>
               <div class="schedule-location">Ulme 35, Berlin-Charlottenburg<br>(U-Neu-Westend)</div>
+              <div class="schedule-price">24 &euro; inkl. Materialien</div>
               <div class="slot-links">
                 <a class="slot-link booking-selection-trigger" href="#kontakt" data-workshop="Ton arbeiten | Teil 2" data-date="12. Juni" data-time="14:00-16:00 Uhr" data-location="Ulme 35, Ulmenallee 35, 14050 Berlin (U-Neu-Westend)" data-slot-label="12. Juni · 14:00" data-source="workshop-slot">12. Juni · 14:00 auswählen</a>
                 <a class="slot-link booking-selection-trigger" href="#kontakt" data-workshop="Ton arbeiten | Teil 2" data-date="12. Juni" data-time="16:30-18:30 Uhr" data-location="Ulme 35, Ulmenallee 35, 14050 Berlin (U-Neu-Westend)" data-slot-label="12. Juni · 16:30" data-source="workshop-slot">12. Juni · 16:30 auswählen</a>
@@ -1873,6 +1883,7 @@ section[id]{
               <div class="schedule-date">19. Juni</div>
               <div class="schedule-time">14:00&ndash;16:00 Uhr<br>16:30&ndash;18:30 Uhr</div>
               <div class="schedule-location">Ulme 35, Berlin-Charlottenburg<br>(U-Neu-Westend)</div>
+              <div class="schedule-price">24 &euro; inkl. Materialien</div>
               <div class="slot-links">
                 <a class="slot-link booking-selection-trigger" href="#kontakt" data-workshop="Blumen aus Papier" data-date="19. Juni" data-time="14:00-16:00 Uhr" data-location="Ulme 35, Ulmenallee 35, 14050 Berlin (U-Neu-Westend)" data-slot-label="19. Juni · 14:00" data-source="workshop-slot">19. Juni · 14:00 auswählen</a>
                 <a class="slot-link booking-selection-trigger" href="#kontakt" data-workshop="Blumen aus Papier" data-date="19. Juni" data-time="16:30-18:30 Uhr" data-location="Ulme 35, Ulmenallee 35, 14050 Berlin (U-Neu-Westend)" data-slot-label="19. Juni · 16:30" data-source="workshop-slot">19. Juni · 16:30 auswählen</a>
@@ -1902,6 +1913,7 @@ section[id]{
               <div class="schedule-date">26. Juni</div>
               <div class="schedule-time">16:00&ndash;20:00 Uhr</div>
               <div class="schedule-location">Ulme 35, Berlin-Charlottenburg<br>(U-Neu-Westend)</div>
+              <div class="schedule-price">45 &euro; inkl. Snacks und Drinks</div>
               <div class="slot-links">
                 <a class="slot-link booking-selection-trigger" href="#kontakt" data-workshop="Midsommar" data-date="26. Juni" data-time="16:00-20:00 Uhr" data-location="Ulme 35, Ulmenallee 35, 14050 Berlin (U-Neu-Westend)" data-slot-label="26. Juni · 16:00" data-source="workshop-slot">26. Juni · 16:00 auswählen</a>
               </div>
@@ -2082,6 +2094,10 @@ section[id]{
               <strong>Ort</strong>
               <span id="booking-selection-location"></span>
             </div>
+            <div class="booking-selection-item">
+              <strong>Preis</strong>
+              <span id="booking-selection-price"></span>
+            </div>
           </div>
           <div class="booking-selection-actions">
             <a class="button button-primary" id="booking-mail-link" href="mailto:klarundkunter@gmail.com?subject=Anmeldung%20bei%20Klar%20%26%20Kunter&body=Hey%2C%0A%0Aich%20m%C3%B6chte%20mich%20f%C3%BCr%20einen%20Workshop%20im%20Juni%20anmelden.%0AMein%20Wunschworkshop%20ist%3A%20_____________%0AMein%20Wunschtermin%20ist%3A%20_____________%0A%0AMeine%20Handynummer%20ist%3A%20_____________%0A%0AViele%20Gr%C3%BC%C3%9Fe">Mail schreiben</a>
@@ -2253,10 +2269,19 @@ section[id]{
   const date = document.getElementById("booking-selection-date");
   const time = document.getElementById("booking-selection-time");
   const location = document.getElementById("booking-selection-location");
+  const price = document.getElementById("booking-selection-price");
   const contactSection = document.getElementById("kontakt");
 
-  if (!triggers.length || !details || !intro || !status || !mailLink || !smsLink || !copyButton || !workshop || !date || !time || !location || !contactSection) {
+  if (!triggers.length || !details || !intro || !status || !mailLink || !smsLink || !copyButton || !workshop || !date || !time || !location || !price || !contactSection) {
     return;
+  }
+
+  function getWorkshopPriceLabel(workshopName) {
+    if (workshopName === "Midsommar") {
+      return "45 € inkl. Snacks und Drinks";
+    }
+
+    return "24 € inkl. Materialien";
   }
 
   function getWorkshopMailCopy(data) {
@@ -2396,6 +2421,7 @@ section[id]{
       date.textContent = data.date;
       time.textContent = data.time;
       location.textContent = data.location;
+      price.textContent = getWorkshopPriceLabel(data.workshop);
       intro.textContent = "Wenn Du einen Termin buchen möchtest, klicke auf \"Buchen\", dann öffnet sich automatisch eine E-Mail. Schon bist Du dabei!";
       status.textContent = "Wenn Mail oder SMS nicht aufgehen, kopiere die Auswahl oder ruf uns direkt an.";
       details.hidden = false;
