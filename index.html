@@ -288,6 +288,22 @@ section[id]{
   margin-top:28px;
 }
 
+.hero-actions > a[href="#workshops"]:not(.hero-all-dates){
+  display:none;
+}
+
+.hero-actions .booking-direct-mail{
+  order:1;
+}
+
+.hero-actions .hero-all-dates{
+  order:2;
+}
+
+.hero-actions > a[href="tel:+491749845286"]{
+  order:3;
+}
+
 .hero-actions .button-primary{
   background:#fff;
   color:var(--text);
@@ -312,6 +328,32 @@ section[id]{
   margin-top:16px;
   color:rgba(255,255,255,.82);
   font-size:.96rem;
+}
+
+#top .hero-inner > .hero-note:not(.conversion-note){
+  display:none;
+}
+
+.hero-trust{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:18px;
+}
+
+.hero-trust span{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:36px;
+  padding:0 12px;
+  border-radius:999px;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.16);
+  color:rgba(255,255,255,.92);
+  font-size:12px;
+  letter-spacing:.04em;
 }
 
 .quick-nav{
@@ -1382,6 +1424,50 @@ section[id]{
   text-underline-offset:3px;
 }
 
+.contact-steps{
+  display:grid;
+  gap:10px;
+  margin-top:22px;
+}
+
+.contact-step{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:12px;
+  align-items:start;
+  padding:14px 16px;
+  border-radius:18px;
+  background:rgba(255,255,255,.62);
+  border:1px solid rgba(184,143,124,.16);
+}
+
+.contact-step-number{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:28px;
+  height:28px;
+  border-radius:50%;
+  background:#fff;
+  border:1px solid rgba(184,143,124,.22);
+  font-size:12px;
+  letter-spacing:.08em;
+  color:var(--accent-dark);
+}
+
+.contact-step-copy strong{
+  display:block;
+  font-size:.98rem;
+  margin-bottom:2px;
+}
+
+.contact-step-copy span{
+  display:block;
+  color:var(--muted);
+  font-size:.94rem;
+  line-height:1.5;
+}
+
 .contact-list{
   display:grid;
   gap:12px;
@@ -1404,6 +1490,102 @@ section[id]{
 
 .contact-value{
   font-size:1rem;
+}
+
+.faq-section{
+  padding-top:0;
+}
+
+.faq-grid{
+  display:grid;
+  grid-template-columns:1.08fr .92fr;
+  gap:24px;
+}
+
+.faq-card,
+.faq-sidecard{
+  background:
+    var(--pastel-card-overlay-soft),
+    var(--pastel-surface) center/cover no-repeat;
+  border:1px solid var(--line);
+  border-radius:var(--radius-xl);
+  padding:28px;
+  box-shadow:var(--shadow);
+}
+
+.faq-card h2,
+.faq-sidecard h3{
+  font-size:clamp(1.7rem, 3.8vw, 2.5rem);
+  line-height:1.06;
+}
+
+.faq-card p,
+.faq-sidecard p{
+  color:var(--muted);
+}
+
+.faq-list{
+  display:grid;
+  gap:12px;
+  margin-top:22px;
+}
+
+.faq-item{
+  border-radius:20px;
+  border:1px solid rgba(184,143,124,.18);
+  background:rgba(255,255,255,.7);
+  overflow:hidden;
+}
+
+.faq-item summary{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  cursor:pointer;
+  list-style:none;
+  padding:18px 20px;
+  font-size:1rem;
+  font-weight:600;
+  color:var(--text);
+}
+
+.faq-item summary::-webkit-details-marker{
+  display:none;
+}
+
+.faq-item summary::after{
+  content:"+";
+  flex:0 0 auto;
+  width:24px;
+  height:24px;
+  border-radius:50%;
+  border:1px solid rgba(184,143,124,.24);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--accent-dark);
+  font-size:16px;
+}
+
+.faq-item[open] summary::after{
+  content:"-";
+}
+
+.faq-item p{
+  margin:0;
+  padding:0 20px 18px;
+  color:var(--muted);
+}
+
+.faq-sidecard ul{
+  margin:18px 0 0;
+  padding-left:18px;
+  color:var(--muted);
+}
+
+.faq-sidecard li + li{
+  margin-top:8px;
 }
 
 .mobile-booking-bar{
@@ -1551,6 +1733,7 @@ section[id]{
   .workshops-grid,
   .format-grid,
   .about-grid,
+  .faq-grid,
   .contact-grid{
     grid-template-columns:1fr;
   }
@@ -1606,13 +1789,18 @@ section[id]{
   }
 
   .hero-actions,
-  .workshop-actions{
+  .workshop-actions,
+  .hero-trust{
     flex-direction:column;
   }
 
   .hero-actions .button,
   .workshop-actions .button,
   .button{
+    width:100%;
+  }
+
+  .hero-trust span{
     width:100%;
   }
 
@@ -1629,6 +1817,8 @@ section[id]{
 
   .contact-box,
   .contact-panel,
+  .faq-card,
+  .faq-sidecard,
   .about-card.copy,
   .intro-panel,
   .workshop-content,
@@ -1743,8 +1933,17 @@ section[id]{
     <div class="hero-actions">
       <a class="button button-primary" href="#workshops">Workshop wählen</a>
       <a class="button button-secondary" href="tel:+491749845286">Anrufen</a>
+      <a class="button button-primary booking-direct-mail" href="mailto:klarundkunter@gmail.com" data-workshop="Ton arbeiten | Teil 1" data-date="03. Juli" data-time="16:30-18:30 Uhr" data-location="Ulme 35, Ulmenallee 35, 14050 Berlin (U-Neu-Westend)">03. Juli direkt buchen</a>
+      <a class="button button-secondary hero-all-dates" href="#workshops">Alle Juli-Termine</a>
     </div>
     <p class="hero-note">Ohne Vorkenntnisse · persönlich begleitet · einfach anfragen</p>
+    <p class="hero-note conversion-note">Kleine Gruppen, klare Anleitung und eine vorbereitete Buchungsmail in 1 Klick.</p>
+    <div class="hero-trust">
+      <span>Ohne Vorkenntnisse</span>
+      <span>Nur 4 Juli-Termine</span>
+      <span>Materialien inklusive</span>
+      <span>Max. 8 Pl&auml;tze je Termin</span>
+    </div>
   </div>
 </section>
 
@@ -1752,8 +1951,8 @@ section[id]{
   <div class="container">
     <div class="booking-rail-grid">
       <div class="booking-rail-card">
-        <span>Einfach anfragen</span>
-        <strong>4 Termine im Juli</strong>
+        <span>Nächster Termin</span>
+        <strong>03. Juli | Ton arbeiten Teil 1</strong>
         <p>Alle Workshops finden freitags um 16:30 Uhr in der Ulme 35 statt. Wähle einfach Deinen Workshop und melde Dich per Mail oder Telefon.</p>
       </div>
 
@@ -1769,6 +1968,11 @@ section[id]{
         <p>Du musst nichts mitbringen oder vorbereiten.</p>
       </div>
 
+      <div class="booking-rail-card">
+        <span>Schnell buchen</span>
+        <strong>Mail in 1 Klick vorbereitet</strong>
+        <p>Jeder Termin öffnet direkt eine vorbereitete Mail mit Datum, Uhrzeit, Ort und Preis.</p>
+      </div>
       <div class="booking-rail-card" hidden>
         <span>Weitere Formate</span>
         <strong>Für Teams und Private Runden</strong>
@@ -1809,8 +2013,10 @@ section[id]{
           <div class="summary-pill">24&ndash;29 &euro; inkl. Materialien</div>
           <div class="summary-pill">Max. 8 Plätze pro Termin</div>
           <div class="summary-pill">Fr in Charlottenburg</div>
+          <div class="summary-pill">1 Klick zur Mail</div>
         </div>
         <p class="section-copy">Wenn Du unsicher bist, ruf einfach kurz an. Wir helfen Dir gern beim passenden Workshop.</p>
+        <p class="section-copy">Mit "Mail vorbereiten" werden Datum, Uhrzeit, Ort und Preis direkt in Deine Anfrage eingesetzt.</p>
       </div>
     </div>
 
@@ -1838,7 +2044,7 @@ section[id]{
             </div>
           </div>
           <div class="schedule-actions">
-            <a class="mini-button booking-direct-mail" href="mailto:klarundkunter@gmail.com" data-workshop="Ton arbeiten | Teil 1" data-date="03. Juli" data-time="16:30-18:30 Uhr" data-location="Ulme 35, Ulmenallee 35, 14050 Berlin (U-Neu-Westend)">Buchen</a>
+            <a class="mini-button booking-direct-mail" href="mailto:klarundkunter@gmail.com" data-workshop="Ton arbeiten | Teil 1" data-date="03. Juli" data-time="16:30-18:30 Uhr" data-location="Ulme 35, Ulmenallee 35, 14050 Berlin (U-Neu-Westend)">Mail vorbereiten</a>
             <a class="mini-button secondary" href="tel:+491749845286">Anrufen</a>
           </div>
         </div>
@@ -1867,7 +2073,7 @@ section[id]{
             </div>
           </div>
           <div class="schedule-actions">
-            <a class="mini-button booking-direct-mail" href="mailto:klarundkunter@gmail.com" data-workshop="Schmuck aus Paperpearls" data-date="10. Juli" data-time="16:30-18:30 Uhr" data-location="Ulme 35, Ulmenallee 35, 14050 Berlin (U-Neu-Westend)">Buchen</a>
+            <a class="mini-button booking-direct-mail" href="mailto:klarundkunter@gmail.com" data-workshop="Schmuck aus Paperpearls" data-date="10. Juli" data-time="16:30-18:30 Uhr" data-location="Ulme 35, Ulmenallee 35, 14050 Berlin (U-Neu-Westend)">Mail vorbereiten</a>
             <a class="mini-button secondary" href="tel:+491749845286">Anrufen</a>
           </div>
         </div>
@@ -1896,7 +2102,7 @@ section[id]{
             </div>
           </div>
           <div class="schedule-actions">
-            <a class="mini-button booking-direct-mail" href="mailto:klarundkunter@gmail.com" data-workshop="Ton arbeiten | Teil 2" data-date="17. Juli" data-time="16:30-18:30 Uhr" data-location="Ulme 35, Ulmenallee 35, 14050 Berlin (U-Neu-Westend)">Buchen</a>
+            <a class="mini-button booking-direct-mail" href="mailto:klarundkunter@gmail.com" data-workshop="Ton arbeiten | Teil 2" data-date="17. Juli" data-time="16:30-18:30 Uhr" data-location="Ulme 35, Ulmenallee 35, 14050 Berlin (U-Neu-Westend)">Mail vorbereiten</a>
             <a class="mini-button secondary" href="tel:+491749845286">Anrufen</a>
           </div>
         </div>
@@ -1925,7 +2131,7 @@ section[id]{
             </div>
           </div>
           <div class="schedule-actions">
-            <a class="mini-button booking-direct-mail" href="mailto:klarundkunter@gmail.com" data-workshop="Mosaiktablett | Teil 1" data-date="24. Juli" data-time="16:30-18:30 Uhr" data-location="Ulme 35, Ulmenallee 35, 14050 Berlin (U-Neu-Westend)">Buchen</a>
+            <a class="mini-button booking-direct-mail" href="mailto:klarundkunter@gmail.com" data-workshop="Mosaiktablett | Teil 1" data-date="24. Juli" data-time="16:30-18:30 Uhr" data-location="Ulme 35, Ulmenallee 35, 14050 Berlin (U-Neu-Westend)">Mail vorbereiten</a>
             <a class="mini-button secondary" href="tel:+491749845286">Anrufen</a>
           </div>
         </div>
@@ -2066,6 +2272,43 @@ section[id]{
   </div>
 </section>
 
+<section class="section faq-section" id="faq">
+  <div class="container">
+    <div class="faq-grid">
+      <div class="faq-card">
+        <div class="eyebrow">Vor der Buchung</div>
+        <h2>Die h&auml;ufigsten Fragen kurz beantwortet.</h2>
+        <p>Damit der Schritt zur Buchung leicht wird, findest Du hier die wichtigsten Antworten direkt vor dem Anfragebereich.</p>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Muss ich etwas mitbringen oder vorbereitet haben?</summary>
+            <p>Nein. Du brauchst keine Vorkenntnisse, keine eigene Idee und kein Material. Alles steht vor Ort f&uuml;r Dich bereit.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Wie buche ich am schnellsten?</summary>
+            <p>Klicke einfach auf Deinen Termin oder auf &bdquo;Mail vorbereiten&ldquo;. Dann &ouml;ffnet sich direkt eine Mail mit Workshop, Datum, Uhrzeit, Ort und Preis.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Ist das auch etwas f&uuml;r mich, wenn ich lange nicht kreativ war?</summary>
+            <p>Ja. Klar &amp; Kunter ist genau f&uuml;r Menschen gedacht, die ohne Druck wieder ins Machen kommen wollen.</p>
+          </details>
+        </div>
+      </div>
+
+      <div class="faq-sidecard">
+        <div class="eyebrow">Warum viele direkt buchen</div>
+        <h3>Wenig H&uuml;rde, klarer Rahmen, schneller Start.</h3>
+        <p>Die Seite ist bewusst so aufgebaut, dass Du schnell entscheiden kannst, ohne erst lange nach Infos zu suchen.</p>
+        <ul>
+          <li>Alle Termine liegen sichtbar mit Uhrzeit, Ort und Preis auf der Seite.</li>
+          <li>Jeder Workshop ist auf kleine Gruppen mit maximal 8 Pl&auml;tzen begrenzt.</li>
+          <li>Mail und Telefon sind direkt vorbereitet, falls Du lieber kurz fragen m&ouml;chtest.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section" id="kontakt">
   <div class="container">
     <div class="contact-grid">
@@ -2077,7 +2320,30 @@ section[id]{
         <div class="contact-pills">
           <div class="contact-pill">24&ndash;29 &euro; inkl. Materialien</div>
           <div class="contact-pill">Max. 8 Plätze</div>
-          <div class="contact-pill">Einfach anfragen</div>
+          <div class="contact-pill">Mail in 1 Klick</div>
+        </div>
+        <div class="contact-steps">
+          <div class="contact-step">
+            <span class="contact-step-number">1</span>
+            <div class="contact-step-copy">
+              <strong>Workshop aussuchen</strong>
+              <span>W&auml;hle oben oder unten Deinen passenden Juli-Termin aus.</span>
+            </div>
+          </div>
+          <div class="contact-step">
+            <span class="contact-step-number">2</span>
+            <div class="contact-step-copy">
+              <strong>Mail direkt &ouml;ffnen</strong>
+              <span>Workshop, Datum, Uhrzeit, Ort und Preis werden automatisch vorbereitet.</span>
+            </div>
+          </div>
+          <div class="contact-step">
+            <span class="contact-step-number">3</span>
+            <div class="contact-step-copy">
+              <strong>Abschicken oder anrufen</strong>
+              <span>Wenn Mail nicht aufgeht, kannst Du die Auswahl kopieren, eine SMS &ouml;ffnen oder direkt anrufen.</span>
+            </div>
+          </div>
         </div>
         <div class="booking-selection-box" id="booking-selection-box">
           <h3>Schreib mir einfach oder ruf an.</h3>
@@ -2154,7 +2420,7 @@ section[id]{
 </section>
 
 <div class="mobile-booking-bar">
-  <a class="button button-primary" href="#workshops">Workshops</a>
+  <a class="button button-primary booking-direct-mail" href="mailto:klarundkunter@gmail.com" data-workshop="Ton arbeiten | Teil 1" data-date="03. Juli" data-time="16:30-18:30 Uhr" data-location="Ulme 35, Ulmenallee 35, 14050 Berlin (U-Neu-Westend)">03. Juli buchen</a>
   <a class="button button-secondary" href="tel:+491749845286">Anrufen</a>
 </div>
 
@@ -2403,6 +2669,35 @@ section[id]{
     link.href = buildMailto(data);
   });
 
+  function setSelection(data, options) {
+    const openMail = Boolean(options && options.openMail);
+    const isDefault = Boolean(options && options.isDefault);
+
+    workshop.textContent = data.workshop;
+    date.textContent = data.date;
+    time.textContent = data.time;
+    location.textContent = data.location;
+    price.textContent = getWorkshopPriceLabel(data.workshop);
+    details.hidden = false;
+    mailLink.href = buildMailto(data);
+    smsLink.href = buildSmsLink(data);
+    copyButton.dataset.copyText = buildCopyText(data);
+    mailLink.textContent = data.date ? "Mail f\u00fcr " + data.date + " \u00f6ffnen" : "Mail schreiben";
+    smsLink.textContent = data.date ? "SMS f\u00fcr " + data.date + " \u00f6ffnen" : "SMS \u00f6ffnen";
+
+    if (isDefault) {
+      intro.textContent = "Der n\u00e4chste Juli-Termin ist bereits vorbereitet. Du kannst die Mail direkt \u00f6ffnen oder oben einen anderen Workshop w\u00e4hlen.";
+      status.textContent = "Mit einem Klick \u00f6ffnest Du eine vorbereitete Mail mit Datum, Uhrzeit, Ort und Preis.";
+    } else {
+      intro.textContent = "Die Mail f\u00fcr diesen Termin ist vorbereitet. Wenn sich nichts \u00f6ffnet, nutze unten Mail, SMS oder Kopieren.";
+      status.textContent = "Wenn Mail oder SMS nicht aufgehen, kopiere die Auswahl oder ruf uns direkt an.";
+    }
+
+    if (openMail) {
+      window.location.href = mailLink.href;
+    }
+  }
+
   function copyText(value) {
     if (navigator.clipboard && navigator.clipboard.writeText) {
       return navigator.clipboard.writeText(value);
@@ -2440,6 +2735,9 @@ section[id]{
         slotLabel: trigger.dataset.slotLabel || trigger.textContent.trim()
       };
 
+      setSelection(data, { openMail: true });
+      return;
+
       workshop.textContent = data.workshop;
       date.textContent = data.date;
       time.textContent = data.time;
@@ -2454,6 +2752,13 @@ section[id]{
       window.location.href = mailLink.href;
     });
   });
+
+  setSelection({
+    workshop: triggers[0].dataset.workshop || "",
+    date: triggers[0].dataset.date || "",
+    time: triggers[0].dataset.time || "",
+    location: triggers[0].dataset.location || ""
+  }, { isDefault: true });
 
   copyButton.addEventListener("click", function () {
     const value = copyButton.dataset.copyText || "";
