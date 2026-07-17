@@ -280,6 +280,44 @@ section[id]{
   letter-spacing:.03em;
 }
 
+.hero-topics{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:24px;
+}
+
+.hero-topic-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px;
+  min-height:40px;
+  padding:10px 16px;
+  border-radius:999px;
+  background:#fff;
+  border:1px solid transparent;
+  color:var(--text);
+  font-size:13px;
+  letter-spacing:.03em;
+  transition:background .2s ease, transform .2s ease;
+}
+
+.hero-topic-title{
+  font-weight:700;
+}
+
+.hero-topic-summary{
+  opacity:.84;
+}
+
+.hero-topic-link:hover{
+  background:#f3ede7;
+  transform:translateY(-1px);
+}
+
 .hero-actions{
   display:flex;
   justify-content:center;
@@ -293,11 +331,12 @@ section[id]{
 }
 
 .hero-actions .booking-direct-mail{
-  order:1;
+  order:2;
 }
 
 .hero-actions .hero-all-dates{
-  order:2;
+  order:1;
+  display:none;
 }
 
 .hero-actions > a[href="tel:+491749845286"]{
@@ -354,6 +393,10 @@ section[id]{
   color:rgba(255,255,255,.92);
   font-size:12px;
   letter-spacing:.04em;
+}
+
+.workshops .card{
+  scroll-margin-top:100px;
 }
 
 .quick-nav{
@@ -1048,7 +1091,7 @@ section[id]{
 }
 
 .format-feature-home{
-  background-position:35% center;
+  background-position:center center;
 }
 
 .format-feature::before{
@@ -1718,9 +1761,22 @@ section[id]{
   .nav{
     justify-content:flex-start;
     gap:8px;
+    flex-wrap:nowrap;
+    width:100%;
+    overflow-x:auto;
+    overflow-y:hidden;
+    -ms-overflow-style:none;
+    scrollbar-width:none;
+    white-space:nowrap;
+  }
+
+  .nav::-webkit-scrollbar{
+    display:none;
   }
 
   .nav a{
+    flex:0 0 auto;
+    white-space:nowrap;
     padding:8px 10px;
   }
 
@@ -1775,15 +1831,31 @@ section[id]{
     min-height:auto;
   }
 
+  .nav{
+    gap:6px;
+  }
+
+  .nav a{
+    padding:8px 9px;
+    font-size:11px;
+    letter-spacing:.06em;
+  }
+
   .hero-inner{
     padding:62px 0 56px;
   }
 
   .hero h1{
-    font-size:2.45rem;
+    font-size:1.92rem;
+    line-height:1.02;
   }
 
   .hero-facts{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .hero-topics{
     flex-direction:column;
     align-items:stretch;
   }
@@ -1802,6 +1874,12 @@ section[id]{
 
   .hero-trust span{
     width:100%;
+  }
+
+  .hero-topic-link{
+    width:100%;
+    flex-direction:column;
+    gap:4px;
   }
 
   .booking-rail-grid,
@@ -1922,18 +2000,35 @@ section[id]{
 <section class="hero" id="top">
   <div class="hero-inner">
     <div class="hero-kicker">Kreative Workshops in Berlin</div>
-    <h1><span class="hero-title-line one-line-title">Weniger Stress beginnt nicht im Kopf.</span><span class="hero-title-line">Sondern mit Deinen Händen.</span></h1>
+    <h1><span class="hero-title-line one-line-title">Weniger Stress beginnt nicht&nbsp;im&nbsp;Kopf.</span><span class="hero-title-line">Sondern mit Deinen Händen.</span></h1>
     <p class="hero-lead">Klar &amp; Kunter ist für Menschen, die ihren Stress und mental load reduzieren und Kreativität fördern möchten. Lass uns anfangen!</p>
+    <div class="hero-topics">
+      <a class="hero-topic-link" href="#workshop-ton-1">
+        <span class="hero-topic-title">Ton Teil 1 · Fr. 03. Juli</span>
+        <span class="hero-topic-summary">Schalen, Tassen &amp; Bluetenabdruecke</span>
+      </a>
+      <a class="hero-topic-link" href="#workshop-paperpearls">
+        <span class="hero-topic-title">Paperpearls · Fr. 10. Juli</span>
+        <span class="hero-topic-summary">Halskette &amp; Armband aus Papierperlen</span>
+      </a>
+      <a class="hero-topic-link" href="#workshop-ton-2">
+        <span class="hero-topic-title">Ton Teil 2 · Fr. 17. Juli</span>
+        <span class="hero-topic-summary">Bemalen, glasieren &amp; fertigstellen</span>
+      </a>
+      <a class="hero-topic-link" href="#workshop-mosaik">
+        <span class="hero-topic-title">Mosaiktablett · Fr. 24. Juli</span>
+        <span class="hero-topic-summary">Tablett &amp; Untersetzer gestalten</span>
+      </a>
+    </div>
     <div class="hero-facts">
-      <div class="hero-fact">ab 24 &euro; inkl. Materialien</div>
       <div class="hero-fact">Ulme 35, Berlin-Charlottenburg</div>
       <div class="hero-fact">Max. 8 Plätze</div>
       <div class="hero-fact">Freitage im Juli</div>
+      <div class="hero-fact">ab 24 &euro;</div>
     </div>
     <div class="hero-actions">
       <a class="button button-primary" href="#workshops">Workshop wählen</a>
       <a class="button button-secondary" href="tel:+491749845286">Anrufen</a>
-      <a class="button button-primary booking-direct-mail" href="mailto:klarundkunter@gmail.com" data-workshop="Ton arbeiten | Teil 1" data-date="03. Juli" data-time="16:30-18:30 Uhr" data-location="Ulme 35, Ulmenallee 35, 14050 Berlin (U-Neu-Westend)">03. Juli direkt buchen</a>
       <a class="button button-secondary hero-all-dates" href="#workshops">Alle Juli-Termine</a>
     </div>
     <p class="hero-note">Ohne Vorkenntnisse · persönlich begleitet · einfach anfragen</p>
@@ -2021,7 +2116,7 @@ section[id]{
     </div>
 
     <div class="workshops">
-      <div class="card card1 deferred-bg" data-bg-desktop="KuK Bilder/optimized/workshop-ton1-1200.jpg" data-bg-mobile="KuK Bilder/optimized/workshop-ton1-700.jpg">
+      <div class="card card1 deferred-bg" id="workshop-ton-1" data-bg-desktop="KuK Bilder/optimized/workshop-ton1-1200.jpg" data-bg-mobile="KuK Bilder/optimized/workshop-ton1-700.jpg">
         <div class="card-content">
           <div class="card-header">
             <span class="card-kicker">Workshop 01</span>
@@ -2050,7 +2145,7 @@ section[id]{
         </div>
       </div>
 
-      <div class="card card2 deferred-bg" data-bg-desktop="KuK Bilder/optimized/workshop-paperpearls-1200.jpg" data-bg-mobile="KuK Bilder/optimized/workshop-paperpearls-700.jpg">
+      <div class="card card2 deferred-bg" id="workshop-paperpearls" data-bg-desktop="KuK Bilder/optimized/workshop-paperpearls-1200.jpg" data-bg-mobile="KuK Bilder/optimized/workshop-paperpearls-700.jpg">
         <div class="card-content">
           <div class="card-header">
             <span class="card-kicker">Workshop 02</span>
@@ -2079,7 +2174,7 @@ section[id]{
         </div>
       </div>
 
-      <div class="card card3 deferred-bg" data-bg-desktop="KuK Bilder/optimized/workshop-ton2-1200.jpg" data-bg-mobile="KuK Bilder/optimized/workshop-ton2-700.jpg">
+      <div class="card card3 deferred-bg" id="workshop-ton-2" data-bg-desktop="KuK Bilder/optimized/workshop-ton2-1200.jpg" data-bg-mobile="KuK Bilder/optimized/workshop-ton2-700.jpg">
         <div class="card-content">
           <div class="card-header">
             <span class="card-kicker">Workshop 03</span>
@@ -2108,7 +2203,7 @@ section[id]{
         </div>
       </div>
 
-      <div class="card card4 deferred-bg" data-bg-desktop="KuK Bilder/optimized/workshop-mosaik-1200.jpg" data-bg-mobile="KuK Bilder/optimized/workshop-mosaik-700.jpg">
+      <div class="card card4 deferred-bg" id="workshop-mosaik" data-bg-desktop="KuK Bilder/optimized/workshop-mosaik-1200.jpg" data-bg-mobile="KuK Bilder/optimized/workshop-mosaik-700.jpg">
         <div class="card-content">
           <div class="card-header">
             <span class="card-kicker">Workshop 04</span>
