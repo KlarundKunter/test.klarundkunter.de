@@ -931,21 +931,22 @@ section[id]{
 
 .season-title{
   display:grid;
-  grid-template-columns:18px minmax(0, 1fr);
+  grid-template-columns:1.1em minmax(0, 1fr);
   column-gap:10px;
   align-items:start;
 }
 
 .season-title::before{
-  content:"";
+  content:"●";
   display:block;
-  width:14px;
-  height:14px;
-  aspect-ratio:1;
-  margin-top:2px;
-  border-radius:50%;
-  background:var(--accent);
-  box-shadow:inset 0 0 0 4px rgba(255,255,255,.72);
+  width:1em;
+  height:1em;
+  color:var(--accent);
+  font-family:Arial, sans-serif;
+  font-size:1.05rem;
+  line-height:1;
+  margin-top:.12em;
+  text-align:center;
 }
 
 .season-title strong{
