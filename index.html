@@ -888,10 +888,10 @@ section[id]{
 
 .season-item{
   display:grid;
-  grid-template-columns:78px 82px minmax(190px, .9fr) minmax(0, 1.4fr) auto;
-  gap:16px;
+  grid-template-columns:110px 92px minmax(190px, .9fr) minmax(0, 1.4fr) auto;
+  gap:14px;
   align-items:center;
-  padding:18px;
+  padding:14px;
   border:1px solid var(--line);
   border-radius:20px;
   background:rgba(255,255,255,.66);
@@ -901,12 +901,13 @@ section[id]{
 .season-image{
   position:relative;
   overflow:hidden;
-  width:72px;
-  height:72px;
+  width:104px;
+  height:104px;
   aspect-ratio:1;
+  margin:0;
   border-radius:50%;
   background:#e8ddd2;
-  box-shadow:0 0 0 5px rgba(255,255,255,.86), 0 10px 20px rgba(53,43,38,.12);
+  box-shadow:0 0 0 4px rgba(255,255,255,.92), 0 10px 20px rgba(53,43,38,.12);
 }
 
 .season-image img{
@@ -926,8 +927,10 @@ section[id]{
 
 .season-date{
   font-family:Georgia, "Times New Roman", serif;
-  font-size:1.3rem;
+  font-size:1.35rem;
+  font-weight:700;
   line-height:1.1;
+  white-space:nowrap;
 }
 
 .season-title{
@@ -1978,7 +1981,12 @@ section[id]{
   }
 
   .season-item{
-    grid-template-columns:74px 82px minmax(190px, .9fr) minmax(0, 1.2fr);
+    grid-template-columns:102px 90px minmax(190px, .9fr) minmax(0, 1.2fr);
+  }
+
+  .season-image{
+    width:96px;
+    height:96px;
   }
 
   .season-item .mini-button{
@@ -2092,7 +2100,7 @@ section[id]{
   }
 
   .season-item{
-    grid-template-columns:74px 82px minmax(0, 1fr);
+    grid-template-columns:102px 90px minmax(0, 1fr);
     align-items:start;
   }
 
@@ -2194,8 +2202,8 @@ section[id]{
   }
 
   .season-image{
-    width:96px;
-    height:96px;
+    width:128px;
+    height:128px;
   }
 
   .season-title,
