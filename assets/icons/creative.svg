@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-labelledby="title">
+  <title id="title">Kreative Auszeit</title>
+  <circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.7"/>
+  <path d="M12 6.3v11.4M6.3 12h11.4M8 8l8 8M16 8l-8 8" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+  <circle cx="12" cy="12" r="2.25" fill="#B7FF00"/>
+</svg>

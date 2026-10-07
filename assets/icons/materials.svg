@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-labelledby="title">
+  <title id="title">Materialien inklusive</title>
+  <rect x="3.5" y="4" width="7.2" height="7.2" stroke="currentColor" stroke-width="1.7"/>
+  <circle cx="16.7" cy="7.6" r="3.6" fill="#B7FF00" stroke="currentColor" stroke-width="1.4"/>
+  <path d="m7.2 19.7 4.4-7.2 4.4 7.2H7.2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+</svg>
