@@ -129,7 +129,7 @@ if (event) {
 
   const footer = document.querySelector(".site-footer");
   if (footer) {
-    footer.innerHTML = `<a class="footer-brand" href="${homeUrl}" aria-label="Klar & Kunter – Startseite"><img src="${assetsUrl}logo.png" alt="Klar & Kunter"></a><p>Kreative Workshops in Berlin-Charlottenburg.</p><div><a href="${homeUrl}#workshops">Workshops</a><a href="${homeUrl}impressum/">Impressum</a><a href="${homeUrl}datenschutz/">Datenschutz</a></div><small>© 2026 Klar & Kunter · Jeannette Sachse</small>`;
+    footer.innerHTML = `<a class="footer-brand" href="${homeUrl}" aria-label="Klar & Kunter – Startseite"><img src="${assetsUrl}logo.png" alt="Klar & Kunter"></a><p>Kreative Workshops in Berlin-Charlottenburg.</p><div><a href="${homeUrl}#workshops">Workshops</a><a href="${homeUrl}wissen/kreativitaet-stress-reduzieren/">Kreativität & Stress</a><a href="${homeUrl}impressum/">Impressum</a><a href="${homeUrl}datenschutz/">Datenschutz</a></div><small>© 2026 Klar & Kunter · Jeannette Sachse</small>`;
   }
 
   const location = event.retreat
