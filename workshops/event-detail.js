@@ -1,18 +1,28 @@
 const events = {
-  "herbstschalen-teil-1": { name: "Schalen aus Ton inklusive Brennen – Teil 1", description: "Teil 1 des zweiteiligen Tonkurses am 2. und 23. Oktober.", image: "workshop-ton1-1200.jpg", startDate: "2026-10-02T16:30:00+02:00", endDate: "2026-10-02T19:00:00+02:00", price: "34" },
-  "kerzenhalter-omas-fundus": { name: "Kerzenhalter aus Omas Fundus", description: "Kombiniere Vintage-Gläser zu einem individuellen Kerzenhalter.", image: "workshop-kerzenhalter-glaeser-atelier.jpg", startDate: "2026-10-16T16:30:00+02:00", endDate: "2026-10-16T19:00:00+02:00", price: "39" },
-  "herbstschalen-teil-2": { name: "Bemalen der Tonschalen inklusive Brennen – Teil 2", description: "Teil 2 des zweiteiligen Tonkurses am 2. und 23. Oktober.", image: "workshop-ton2-1200.jpg", startDate: "2026-10-23T16:30:00+02:00", endDate: "2026-10-23T19:00:00+02:00", price: "34" },
-  "mosaik-flaschenlampe": { name: "Mosaik-Flaschen-Lampe", description: "Gestalte aus einer Flasche, buntem Mosaik und einem kleinen Lampenschirm Deine eigene Lampe.", image: "workshop-mosaik-flaschenlampe-atelier.jpg", startDate: "2026-10-30T16:30:00+01:00", endDate: "2026-10-30T19:00:00+01:00", price: "45" },
-  "wunschthema": { name: "Wunschthema der Teilnehmerinnen und Teilnehmer", description: "Die Gruppe bestimmt das DIY-Thema des gemeinsamen kreativen Abends.", image: "workshop-wunschthema-atelier.jpg", startDate: "2026-11-06T16:30:00+01:00", endDate: "2026-11-06T19:00:00+01:00" },
-  "adventskranz": { name: "Adventskranz gestalten", description: "Binde und gestalte Deinen persönlichen Adventskranz aus Tannengrün und Naturmaterialien.", image: "workshop-adventskranz-atelier.jpg", startDate: "2026-11-13T16:30:00+01:00", endDate: "2026-11-13T19:00:00+01:00", price: "69" },
-  "weihnachtskarten": { name: "Weihnachtskarten mit Stanzen", description: "Gestalte individuelle Weihnachtskarten mit Stanzen, Papier und vorbereiteten Materialien.", image: "workshop-weihnachtskarten-atelier.jpg", startDate: "2026-11-20T16:30:00+01:00", endDate: "2026-11-20T19:00:00+01:00", price: "29" },
+  "mosaik-flaschenlampe": { name: "Mosaik-Flaschen-Lampe", description: "Gestalte aus einer Flasche, buntem Mosaik und einem kleinen Lampenschirm Deine eigene Lampe – auch als persönliche Weihnachtsgeschenkidee.", image: "workshop-mosaik-flaschenlampe-atelier.jpg", startDate: "2026-12-11T16:30:00+01:00", endDate: "2026-12-11T19:00:00+01:00", bookingDateLabel: "11. Dezember 2026, 16:30–19:00 Uhr", price: "49", sessions: [{ startDate: "2026-10-30T16:30:00+01:00", endDate: "2026-10-30T19:00:00+01:00", availability: "https://schema.org/SoldOut" }, { startDate: "2026-12-11T16:30:00+01:00", endDate: "2026-12-11T19:00:00+01:00", availability: "https://schema.org/InStock" }] },
+  "perlenschmuck": { name: "Schmuck-Boutique", description: "Kreiere festlichen Schmuck für die Vorweihnachtszeit oder als persönliche Geschenkidee.", image: "workshop-paperpearls-1200.jpg", startDate: "2026-11-06T16:30:00+01:00", endDate: "2026-11-06T19:00:00+01:00", price: "49" },
+  "adventskranz": { name: "Adventskranz gestalten", description: "Binde und gestalte Deinen persönlichen Adventskranz aus Tannengrün und Naturmaterialien.", image: "assets/workshop-adventskranz-4-kerzen.jpg", startDate: "2026-11-13T19:00:00+01:00", endDate: "2026-11-13T21:00:00+01:00", bookingDateLabel: "13. November 2026, 19:00–21:00 Uhr", price: "69", sessions: [{ startDate: "2026-11-13T16:30:00+01:00", endDate: "2026-11-13T19:00:00+01:00", availability: "https://schema.org/SoldOut" }, { startDate: "2026-11-13T19:00:00+01:00", endDate: "2026-11-13T21:00:00+01:00", availability: "https://schema.org/InStock" }] },
+  "weihnachtliche-tuerkraenze-gestecke": { name: "Weihnachtliche Türkränze oder Gestecke", description: "Gestalte einen persönlichen weihnachtlichen Türkranz oder ein festliches Gesteck aus winterlichem Grün und Naturmaterialien.", image: "assets/workshop-weihnachtskranz-gesteck.jpg", startDate: "2026-12-03T16:30:00+01:00", endDate: "2026-12-03T19:00:00+01:00", price: "69" },
   "tassen-duftkerzen": { name: "Tassen-Duftkerzen als Geschenkidee", description: "Gieße zwei Duftkerzen in Vintage-Tassen als Weihnachtsgeschenk oder für Dich selbst.", image: "workshop-duftkerzen-atelier.jpg", startDate: "2026-12-04T16:30:00+01:00", endDate: "2026-12-04T19:00:00+01:00", price: "39" },
-  "makramee-weihnachtsfeier": { name: "Weihnachtsfeier mit Makramee und Glühwein", description: "Kreativer Jahresabschluss mit Makramee, Plätzchen, Glühwein und einer kleinen Überraschung.", image: "workshop-makramee-atelier.jpg", startDate: "2026-12-11T16:30:00+01:00", endDate: "2026-12-11T20:00:00+01:00", price: "59" },
+  "makramee-weihnachtsfeier": { name: "Weihnachtsfeier mit Makramee und Glühwein", description: "Kreativer Jahresabschluss mit Makramee, Plätzchen, Glühwein und einer kleinen Überraschung.", image: "workshop-makramee-atelier.jpg", startDate: "2026-11-20T16:30:00+01:00", endDate: "2026-11-20T20:00:00+01:00", price: "59" },
   "retreat-ulrichshusen": { name: "Bloom & Balance Retreat", description: "Drei Tage mit Bewegung, Körperwahrnehmung, Kreativität und Erholung auf Schloss Ulrichshusen.", image: "retreat-flowers-lake-1400.jpg", startDate: "2027-04-02T12:00:00+02:00", endDate: "2027-04-04T16:00:00+02:00", retreat: true, offers: [{ name: "Einzelzimmer", price: "1499" }, { name: "Doppelzimmer pro Person", price: "1299" }] }
 };
 
 const slug = document.body.dataset.event;
 const event = events[slug];
+
+document.querySelectorAll('video[data-playback-rate]').forEach((video) => {
+  const rate = Number(video.dataset.playbackRate);
+  if (!Number.isFinite(rate) || rate <= 0) return;
+
+  const applyPlaybackRate = () => {
+    video.defaultPlaybackRate = rate;
+    video.playbackRate = rate;
+  };
+
+  applyPlaybackRate();
+  video.addEventListener('loadedmetadata', applyPlaybackRate, { once: true });
+});
 
 if (event) {
   document.body.classList.add("event-page");
@@ -20,9 +30,15 @@ if (event) {
   const homeUrl = event.retreat ? "../" : "../../";
   const assetsUrl = `${homeUrl}assets/`;
   const canonicalUrl = document.querySelector('link[rel="canonical"]')?.href || window.location.href;
-  const imageUrl = `https://klarundkunter.de/KuK%20Bilder/optimized/${event.image}`;
+  const imageUrl = event.image.includes("/")
+    ? `https://klarundkunter.de/${event.image}`
+    : `https://klarundkunter.de/KuK%20Bilder/optimized/${event.image}`;
   const instagramUrl = "https://www.instagram.com/klar_und_kunter_workshops/";
   const baseWhatsapp = "https://wa.me/491749845286";
+  const dateLabel = [...document.querySelectorAll(".facts dt")].find((label) => ["Termin", "Termine"].includes(label.textContent.trim()));
+  const dateValue = event.bookingDateLabel || dateLabel?.parentElement?.querySelector("dd")?.textContent.trim() || "";
+  const message = [event.retreat ? "Hallo Jeannette, ich möchte gern dieses Retreat anfragen:" : "Hallo Jeannette, ich möchte gern diesen Workshop anfragen:", "", event.name, dateValue ? `Termin: ${dateValue}` : ""].filter(Boolean).join("\n");
+  const whatsappUrl = `${baseWhatsapp}?text=${encodeURIComponent(message)}`;
 
   const header = document.querySelector(".site-header");
   if (header) {
@@ -37,10 +53,17 @@ if (event) {
         <a class="nav-cta" href="#anfragen">Platz anfragen</a>
       </nav>
       <div class="header-tools" aria-label="Direktkontakt">
-        <a class="header-social header-whatsapp" href="${baseWhatsapp}" target="_blank" rel="noopener noreferrer" aria-label="Klar & Kunter über WhatsApp kontaktieren"><img src="${assetsUrl}icons/whatsapp.svg" alt=""></a>
+        <a class="header-social header-whatsapp" href="${whatsappUrl}" target="_blank" rel="noopener noreferrer" aria-label="${event.retreat ? "Retreat" : event.name} per WhatsApp anfragen"><img src="${assetsUrl}icons/whatsapp.svg" alt=""></a>
         <a class="header-social header-instagram" href="${instagramUrl}" target="_blank" rel="noopener noreferrer" aria-label="Klar & Kunter auf Instagram öffnen"><img src="${assetsUrl}icons/instagram.svg" alt=""></a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span><span class="sr-only">Menü öffnen</span></button>
       </div>`;
+    if (event.soldOut) {
+      const navCta = header.querySelector(".nav-cta");
+      if (navCta) {
+        navCta.href = `${homeUrl}#workshops`;
+        navCta.textContent = "Weitere Workshops";
+      }
+    }
   }
 
   const updateHeader = () => header?.classList.toggle("scrolled", window.scrollY > 18);
@@ -79,14 +102,10 @@ if (event) {
     venueValue.replaceChildren(link);
   }
 
-  const dateLabel = [...document.querySelectorAll(".facts dt")].find((label) => ["Termin", "Termine"].includes(label.textContent.trim()));
-  const dateValue = dateLabel?.parentElement?.querySelector("dd")?.textContent.trim() || "";
-  const message = [event.retreat ? "Hallo Jeannette, ich möchte gern dieses Retreat anfragen:" : "Hallo Jeannette, ich möchte gern diesen Workshop anfragen:", "", event.name, dateValue ? `Termin: ${dateValue}` : ""].filter(Boolean).join("\n");
-  const whatsappUrl = `${baseWhatsapp}?text=${encodeURIComponent(message)}`;
   const bookingButton = document.querySelector('.event-copy > .button[href^="mailto:"]');
   const emailUrl = bookingButton?.href || "mailto:klarundkunter@gmail.com";
 
-  if (bookingButton) {
+  if (bookingButton && !event.soldOut) {
     const actions = document.createElement("div");
     actions.className = "event-actions";
     actions.innerHTML = `<a class="button button-whatsapp" href="${whatsappUrl}" target="_blank" rel="noopener noreferrer"><img src="${assetsUrl}icons/whatsapp.svg" alt="">${event.retreat ? "Retreat anfragen" : "Per WhatsApp anfragen"}</a>`;
@@ -115,8 +134,9 @@ if (event) {
     const closing = document.createElement("section");
     closing.id = "anfragen";
     closing.className = "closing-cta reveal";
-    closing.innerHTML = `
-      <div><p class="eyebrow">Dein Platz am Tisch</p><h2>${event.retreat ? "Bereit für drei Tage nur für Dich?" : "Lust, einfach mal wieder zu machen?"}</h2><p>${event.retreat ? "Schreib mir kurz – ich beantworte Deine Fragen persönlich und unverbindlich." : "Schreib mir kurz, ob dieser Termin zu Dir passt. Ich melde mich persönlich bei Dir."}</p></div>
+    closing.innerHTML = event.soldOut
+      ? `<div><p class="eyebrow">Dieser Termin ist ausgebucht</p><h2>Entdecke die nächsten kreativen Abende.</h2><p>Schau Dir die weiteren Workshops an – vielleicht ist dort Dein nächster Lieblingsabend dabei.</p></div><div class="closing-actions"><a class="button button-neon" href="${homeUrl}#workshops">Weitere Workshops</a></div>`
+      : `<div><p class="eyebrow">Dein Platz am Tisch</p><h2>${event.retreat ? "Bereit für drei Tage nur für Dich?" : "Lust, einfach mal wieder zu machen?"}</h2><p>${event.retreat ? "Schreib mir kurz – ich beantworte Deine Fragen persönlich und unverbindlich." : "Schreib mir kurz, ob dieser Termin zu Dir passt. Ich melde mich persönlich bei Dir."}</p></div>
       <div class="closing-actions"><a class="button button-neon" href="${whatsappUrl}" target="_blank" rel="noopener noreferrer"><img src="${assetsUrl}icons/whatsapp.svg" alt="">WhatsApp öffnen</a><a class="button button-outline" href="${emailUrl}">E-Mail schreiben</a></div>`;
     details.insertAdjacentElement("afterend", closing);
   }
@@ -124,7 +144,7 @@ if (event) {
   const mobileBar = document.createElement("nav");
   mobileBar.className = "mobile-contact-bar";
   mobileBar.setAttribute("aria-label", "Schnellkontakt");
-  mobileBar.innerHTML = `<a class="mobile-contact-whatsapp" href="${whatsappUrl}" target="_blank" rel="noopener noreferrer"><img src="${assetsUrl}icons/whatsapp.svg" alt=""><span>WhatsApp</span></a><a class="mobile-contact-instagram" href="${instagramUrl}" target="_blank" rel="noopener noreferrer"><img src="${assetsUrl}icons/instagram.svg" alt=""><span>Instagram</span></a>`;
+  mobileBar.innerHTML = `<a class="mobile-contact-whatsapp" href="${whatsappUrl}" target="_blank" rel="noopener noreferrer"><img src="${assetsUrl}icons/whatsapp.svg" alt=""><span>${event.retreat ? "Retreat anfragen" : "Platz anfragen"}</span></a><a class="mobile-contact-instagram" href="${instagramUrl}" target="_blank" rel="noopener noreferrer"><img src="${assetsUrl}icons/instagram.svg" alt=""><span>Instagram</span></a>`;
   document.body.appendChild(mobileBar);
 
   const footer = document.querySelector(".site-footer");
@@ -135,9 +155,16 @@ if (event) {
   const location = event.retreat
     ? { "@type": "Place", name: "Schloss & Gut Ulrichshusen", address: { "@type": "PostalAddress", streetAddress: "Seestraße 14", postalCode: "17194", addressLocality: "Ulrichshusen", addressCountry: "DE" } }
     : { "@type": "Place", name: "Ulme 35", url: "https://interkulturanstalten.de/", address: { "@type": "PostalAddress", streetAddress: "Ulmenallee 35", postalCode: "14050", addressLocality: "Berlin", addressCountry: "DE" } };
-  const offers = event.offers ? event.offers.map((offer) => ({ "@type": "Offer", name: offer.name, url: canonicalUrl, price: offer.price, priceCurrency: "EUR", availability: "https://schema.org/InStock" })) : event.price ? { "@type": "Offer", url: canonicalUrl, price: event.price, priceCurrency: "EUR", availability: "https://schema.org/InStock" } : undefined;
-  const structuredData = { "@context": "https://schema.org", "@type": "Event", name: event.name, description: event.description, image: imageUrl, url: canonicalUrl, startDate: event.startDate, endDate: event.endDate, eventStatus: "https://schema.org/EventScheduled", eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode", location, organizer: { "@type": "Organization", name: "Klar & Kunter", url: "https://klarundkunter.de/", sameAs: instagramUrl } };
-  if (offers) structuredData.offers = offers;
+  const makeOffers = (availability = "https://schema.org/InStock") => event.offers ? event.offers.map((offer) => ({ "@type": "Offer", name: offer.name, url: canonicalUrl, price: offer.price, priceCurrency: "EUR", availability })) : event.price ? { "@type": "Offer", url: canonicalUrl, price: event.price, priceCurrency: "EUR", availability } : undefined;
+  const makeStructuredEvent = (startDate, endDate, availability) => {
+    const item = { "@context": "https://schema.org", "@type": "Event", name: event.name, description: event.description, image: imageUrl, url: canonicalUrl, startDate, endDate, eventStatus: "https://schema.org/EventScheduled", eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode", location, organizer: { "@type": "Organization", name: "Klar & Kunter", url: "https://klarundkunter.de/", sameAs: instagramUrl } };
+    const offers = makeOffers(availability);
+    if (offers) item.offers = offers;
+    return item;
+  };
+  const structuredData = event.sessions
+    ? event.sessions.map((session) => makeStructuredEvent(session.startDate, session.endDate, session.availability))
+    : makeStructuredEvent(event.startDate, event.endDate, event.soldOut ? "https://schema.org/SoldOut" : "https://schema.org/InStock");
   const structuredDataScript = document.createElement("script");
   structuredDataScript.type = "application/ld+json";
   structuredDataScript.textContent = JSON.stringify(structuredData);

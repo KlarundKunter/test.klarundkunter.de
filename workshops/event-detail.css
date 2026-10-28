@@ -46,10 +46,19 @@ body.event-page {
 .button-whatsapp:hover, .button-whatsapp:focus-visible { border-color: var(--ink); background: var(--ink); color: var(--ivory); }
 .button-secondary { border-color: var(--ink); background: transparent; color: var(--ink); }
 .button-secondary:hover, .button-secondary:focus-visible { background: var(--ink); color: var(--ivory); }
+.button-disabled { border-color: var(--ink); background: var(--ink); color: var(--ivory); cursor: default; }
+.button-disabled:hover { transform: none; }
+.availability { display: inline-flex; align-items: center; width: max-content; min-height: 28px; padding: 6px 10px; border-radius: 100px; font-family: var(--sans); font-size: 10px; font-weight: 600; line-height: 1; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap; }
+.availability-sold-out { background: var(--ink); color: var(--ivory); }
+.availability-open { background: var(--neon); color: var(--ink); }
+.facts dd > .availability { margin-top: 9px; }
+.event-single-session { display: grid !important; gap: 7px; }
+.event-session-list { display: grid !important; gap: 13px; }
+.event-session-list > span { display: grid; gap: 7px; }
 
 .event-image { position: relative; z-index: 1; margin: 0; aspect-ratio: 4 / 5; overflow: visible; }
 .event-image::before { content: ""; position: absolute; z-index: -1; width: 78%; aspect-ratio: 1; left: -22%; top: -7%; border: 30px solid var(--neon); border-radius: 50%; }
-.event-image img { width: 100%; height: 100%; object-fit: cover; border-radius: 48% 48% 4px 4px; box-shadow: 0 30px 80px rgba(10, 10, 10, .13); }
+.event-image img, .event-image video { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 48% 48% 4px 4px; box-shadow: 0 30px 80px rgba(10, 10, 10, .13); }
 .event-image figcaption { position: absolute; inset: auto 18px 18px; padding: 13px 16px; background: rgba(244, 240, 230, .94); backdrop-filter: blur(10px); font-size: 14px; }
 .event-page .ticker { margin-bottom: clamp(80px, 10vw, 150px); }
 

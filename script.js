@@ -5,6 +5,19 @@ const nav = document.querySelector('.main-nav');
 const showMoreButton = document.querySelector('[data-show-more]');
 const moreDates = document.querySelector('[data-more-dates]');
 
+document.querySelectorAll('video[data-playback-rate]').forEach((video) => {
+  const rate = Number(video.dataset.playbackRate);
+  if (!Number.isFinite(rate) || rate <= 0) return;
+
+  const applyPlaybackRate = () => {
+    video.defaultPlaybackRate = rate;
+    video.playbackRate = rate;
+  };
+
+  applyPlaybackRate();
+  video.addEventListener('loadedmetadata', applyPlaybackRate, { once: true });
+});
+
 const updateHeader = () => header.classList.toggle('scrolled', window.scrollY > 18);
 updateHeader();
 window.addEventListener('scroll', updateHeader, { passive: true });
